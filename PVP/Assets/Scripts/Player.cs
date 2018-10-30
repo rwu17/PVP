@@ -16,7 +16,7 @@ public class Player : NetworkBehaviour {
                 this.transform.Translate(Vector3.right * Time.deltaTime * 3f);
             }
 
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Input.GetKey(KeyCode.I))
             {
                 CmdSpawn();
             }
