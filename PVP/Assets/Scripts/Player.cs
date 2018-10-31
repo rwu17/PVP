@@ -5,6 +5,11 @@ using UnityEngine.Networking;
 
 public class Player : NetworkBehaviour {
 
+    private float zoom;
+    public float zoomSpeed = 2;
+    public float zoomMin = -0.8f;
+    public float zoomMax = -10f;
+
     public float moveSpeed;
     public float jumpForce;
     public float gravityScale;
@@ -19,6 +24,7 @@ public class Player : NetworkBehaviour {
         if (isLocalPlayer == true)
         {
             playerCamera.GetComponent<Camera>().enabled = true;
+            zoom = -3;
         } else
         {
             playerCamera.GetComponent<Camera>().enabled = false;
@@ -31,6 +37,18 @@ public class Player : NetworkBehaviour {
     {
         if(isLocalPlayer == true)
         {
+            /*
+            zoom += Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
+
+            if (zoom > zoomMin)
+                zoom = zoomMin;
+
+            if (zoom < zoomMax)
+                zoom = zoomMax;
+
+            playerCamera.transform.localPosition = new Vector3(0, 0, zoom);
+            */
+
             moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, 0f, Input.GetAxis("Vertical") * moveSpeed);
 
             if (Input.GetButtonDown("Jump"))
