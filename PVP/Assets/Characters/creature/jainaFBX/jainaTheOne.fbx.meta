@@ -430,6 +430,7 @@ ModelImporter:
     7400002: Run [2]
     9500000: //RootNode
     13700000: creature/jaina3/jaina3
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -450,7 +451,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -497,7 +498,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -549,7 +550,1041 @@ ModelImporter:
   humanDescription:
     serializedVersion: 2
     human: []
-    skeleton: []
+    skeleton:
+    - name: jainaTheOne(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3
+      parentName: jainaTheOne(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3 1
+      parentName: jainaTheOne(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_0
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_1
+      parentName: creature/jaina3/jaina3_bone_0
+      position: {x: -0.008127073, y: 0.6009351, z: 0.010652859}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_2
+      parentName: creature/jaina3/jaina3_bone_1
+      position: {x: -0.009005961, y: -0.030689418, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: creature/jaina3/jaina3_bone_4
+      parentName: creature/jaina3/jaina3_bone_2
+      position: {x: -0.062918834, y: -0.031973556, z: -0.00006298595}
+      rotation: {x: -3.637979e-10, y: 0.0000000014551915, z: -3.6379788e-10, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_9
+      parentName: creature/jaina3/jaina3_bone_4
+      position: {x: 0.010025209, y: -0.076717645, z: 0}
+      rotation: {x: 3.6379794e-10, y: 0.000000010186343, z: 0.0000000047293733, w: 1}
+      scale: {x: 1, y: 1.0000004, z: 1}
+    - name: creature/jaina3/jaina3_bone_15
+      parentName: creature/jaina3/jaina3_bone_9
+      position: {x: -0, y: -0.07793155, z: 0}
+      rotation: {x: -2.7755576e-17, y: -0.000000011641535, z: -0.000000005820767,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_5
+      parentName: creature/jaina3/jaina3_bone_2
+      position: {x: -0.005867135, y: -0.034510612, z: 0.043477006}
+      rotation: {x: 1.8189894e-10, y: -0.000000011641532, z: 6.82121e-11, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_10
+      parentName: creature/jaina3/jaina3_bone_5
+      position: {x: 0.015876653, y: -0.2510673, z: 0}
+      rotation: {x: -1.8189894e-10, y: -0.000000011641532, z: 1.13686845e-10, w: 1}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1}
+    - name: creature/jaina3/jaina3_bone_11
+      parentName: creature/jaina3/jaina3_bone_5
+      position: {x: 0.015876653, y: -0.2510673, z: 0}
+      rotation: {x: 0.0000000012732924, y: 0.000000046566132, z: -0.0000000022509996,
+        w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_16
+      parentName: creature/jaina3/jaina3_bone_11
+      position: {x: 0.027523974, y: -0.2500576, z: 0}
+      rotation: {x: -0, y: -0, z: -5.92923e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: creature/jaina3/jaina3_bone_24
+      parentName: creature/jaina3/jaina3_bone_16
+      position: {x: -0.000000033527613, y: 0.000000022351742, z: -0.000000059604645}
+      rotation: {x: -0.0000000014551913, y: -0.0000000349246, z: 0.0000000021827875,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_30
+      parentName: creature/jaina3/jaina3_bone_24
+      position: {x: -0.056343067, y: -0.031027798, z: 0.002521664}
+      rotation: {x: -0, y: 0.000000011641532, z: -1.1368718e-11, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_169
+      parentName: creature/jaina3/jaina3_bone_24
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 1.110223e-16, y: 0.00000001164153, z: 0.00000001164153, w: 1}
+      scale: {x: 1.0804763, y: 1.0804733, z: 1.0804734}
+    - name: creature/jaina3/jaina3_bone_175
+      parentName: creature/jaina3/jaina3_bone_169
+      position: {x: -0.06111878, y: -0.044589303, z: 0.00017417595}
+      rotation: {x: -0, y: -0, z: -1.2924695e-24, w: 1}
+      scale: {x: 1.0000005, y: 1.0000005, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_154
+      parentName: creature/jaina3/jaina3_bone_11
+      position: {x: -0.000000011175871, y: 0.00000011920929, z: 0.000000007450581}
+      rotation: {x: 0.00000000836735, y: -0.00000003637979, z: 0.000000013824319,
+        w: 1}
+      scale: {x: 1.0000011, y: 1.0000008, z: 1.0000005}
+    - name: creature/jaina3/jaina3_bone_150
+      parentName: creature/jaina3/jaina3_bone_5
+      position: {x: 0.03816521, y: -0.007775545, z: 0.069448024}
+      rotation: {x: -1.8189894e-10, y: 0.000000011641532, z: -6.82121e-11, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: creature/jaina3/jaina3_bone_6
+      parentName: creature/jaina3/jaina3_bone_2
+      position: {x: -0.055239897, y: -0.015914261, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: creature/jaina3/jaina3_bone_152
+      parentName: creature/jaina3/jaina3_bone_6
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -1.6543617e-20, y: 3.6379794e-10, z: 6.0185337e-30, w: 1}
+      scale: {x: 0.7499995, y: 0.75, z: 0.75000054}
+    - name: creature/jaina3/jaina3_bone_7
+      parentName: creature/jaina3/jaina3_bone_2
+      position: {x: -0.005867135, y: -0.034510612, z: -0.043477006}
+      rotation: {x: 2.9679234e-17, y: -7.2759565e-10, z: -0.00000000586624, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_12
+      parentName: creature/jaina3/jaina3_bone_7
+      position: {x: 0.015876655, y: -0.2510673, z: 0}
+      rotation: {x: -1.9653806e-17, y: 7.2759565e-10, z: 0.000000019645086, w: 1}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: creature/jaina3/jaina3_bone_17
+      parentName: creature/jaina3/jaina3_bone_12
+      position: {x: 0.02752398, y: -0.25005764, z: 0}
+      rotation: {x: -0, y: -0, z: 1.4300024e-26, w: 1}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_25
+      parentName: creature/jaina3/jaina3_bone_17
+      position: {x: -0, y: 0.000000011175871, z: 0}
+      rotation: {x: 1.4211054e-12, y: 0.0000000014551912, z: -0.000000013781421, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_31
+      parentName: creature/jaina3/jaina3_bone_25
+      position: {x: -0.056343134, y: -0.03102774, z: -0.0025216043}
+      rotation: {x: -1.7763525e-13, y: 0.0000000014551914, z: 5.3343996e-12, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_168
+      parentName: creature/jaina3/jaina3_bone_25
+      position: {x: 0.0000000037252903, y: 0, z: 0.0000000037252903}
+      rotation: {x: 0.00000001491429, y: -0.0000000014551912, z: -0.0000000014526149,
+        w: 1}
+      scale: {x: 1.0804768, y: 1.0804726, z: 1.0804744}
+    - name: creature/jaina3/jaina3_bone_176
+      parentName: creature/jaina3/jaina3_bone_168
+      position: {x: -0.049376033, y: -0.044589266, z: 0.000000033527613}
+      rotation: {x: -0, y: -0, z: 2.1703143e-17, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: creature/jaina3/jaina3_bone_155
+      parentName: creature/jaina3/jaina3_bone_12
+      position: {x: 0.000000011641532, y: -0.00000011920929, z: 0.0000000037252903}
+      rotation: {x: -0.0000000010913936, y: -0.000000002910383, z: -0.000000015234036,
+        w: 1}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000002}
+    - name: creature/jaina3/jaina3_bone_13
+      parentName: creature/jaina3/jaina3_bone_7
+      position: {x: 0.015876655, y: -0.2510673, z: 0}
+      rotation: {x: -0.000000002910383, y: 0.0000000014551915, z: 0.000000014733814,
+        w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999998}
+    - name: creature/jaina3/jaina3_bone_151
+      parentName: creature/jaina3/jaina3_bone_7
+      position: {x: 0.03816521, y: -0.0077756047, z: -0.06944803}
+      rotation: {x: 7.576981e-18, y: -7.275959e-10, z: 0.0000000064119368, w: 1}
+      scale: {x: 1.0000002, y: 0.9999999, z: 0.99999994}
+    - name: creature/jaina3/jaina3_bone_136
+      parentName: creature/jaina3/jaina3_bone_2
+      position: {x: -0.03580016, y: 0.0465433, z: -0.07779847}
+      rotation: {x: 1.927e-16, y: -0.000000002910383, z: -0.00000005311449, w: 1}
+      scale: {x: 0.8000003, y: 0.79999995, z: 0.80000037}
+    - name: creature/jaina3/jaina3_bone_137
+      parentName: creature/jaina3/jaina3_bone_2
+      position: {x: -0.039605428, y: 0.046539124, z: 0.08232482}
+      rotation: {x: 4.6057417e-17, y: 0.0000000043655746, z: 0.000000018553692, w: 1}
+      scale: {x: 0.8000001, y: 0.80000013, z: 0.79999983}
+    - name: creature/jaina3/jaina3_bone_3
+      parentName: creature/jaina3/jaina3_bone_1
+      position: {x: 0.0011714643, y: -0.0046141148, z: 0}
+      rotation: {x: -0.0000000029103826, y: -0.0000000014551915, z: -0.0000000010004442,
+        w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_8
+      parentName: creature/jaina3/jaina3_bone_3
+      position: {x: 0.010722967, y: 0.04254073, z: 0}
+      rotation: {x: 0.0000000027284837, y: -2.220446e-16, z: 0.0000000019340973, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_14
+      parentName: creature/jaina3/jaina3_bone_8
+      position: {x: 0.001940757, y: 0.04539543, z: 0.00027748974}
+      rotation: {x: 1.364242e-10, y: 7.275961e-10, z: -0.0000000045233146, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_18
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: -0.0032062372, y: 0.10506385, z: -0.014643198}
+      rotation: {x: -0.000000011596059, y: 7.2759565e-10, z: 0.0000000030439646, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: creature/jaina3/jaina3_bone_26
+      parentName: creature/jaina3/jaina3_bone_18
+      position: {x: 0.010073523, y: -0.00941056, z: -0.07233359}
+      rotation: {x: 0.000000034924597, y: -2.220446e-16, z: -0.000000011095835, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_32
+      parentName: creature/jaina3/jaina3_bone_26
+      position: {x: 0.007927211, y: -0.1080895, z: -0.09921513}
+      rotation: {x: -0.000000034924597, y: 2.5910063e-16, z: 0.000000023283064, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_33
+      parentName: creature/jaina3/jaina3_bone_26
+      position: {x: 0.003963608, y: -0.054044724, z: -0.049607567}
+      rotation: {x: -0.000000034924597, y: -0.000000023283064, z: 0.0000000058207665,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: creature/jaina3/jaina3_bone_34
+      parentName: creature/jaina3/jaina3_bone_26
+      position: {x: 0.007927211, y: -0.1080895, z: -0.09921513}
+      rotation: {x: -0.000000034924593, y: -0.000000011641533, z: -0.000000023283064,
+        w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_40
+      parentName: creature/jaina3/jaina3_bone_34
+      position: {x: -0.024414172, y: -0.10778219, z: -0.09684679}
+      rotation: {x: -0.000000011641536, y: 0.0000000058207656, z: 0.000000034924597,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+    - name: creature/jaina3/jaina3_bone_82
+      parentName: creature/jaina3/jaina3_bone_40
+      position: {x: -0.0070005707, y: -0.035457253, z: -0.03534898}
+      rotation: {x: 0.000000023283066, y: 0.0000000058207665, z: -0.000000026193444,
+        w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_104
+      parentName: creature/jaina3/jaina3_bone_82
+      position: {x: -0.0038650923, y: -0.021444201, z: -0.010825217}
+      rotation: {x: 0.000000034924597, y: 4.440892e-16, z: 0.000000014551912, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_83
+      parentName: creature/jaina3/jaina3_bone_40
+      position: {x: 0.01483105, y: -0.035380423, z: -0.035398096}
+      rotation: {x: 0.00000004656613, y: 0.000000017462296, z: -0.00000002328306,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_105
+      parentName: creature/jaina3/jaina3_bone_83
+      position: {x: 0.00010748021, y: -0.015428007, z: -0.006521523}
+      rotation: {x: -0, y: -0.000000005820766, z: -5.42101e-16, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_84
+      parentName: creature/jaina3/jaina3_bone_40
+      position: {x: -0.018865738, y: -0.0341627, z: -0.032085445}
+      rotation: {x: 0.000000011641532, y: 0.0000000058207665, z: 1.3552531e-16, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_106
+      parentName: creature/jaina3/jaina3_bone_84
+      position: {x: -0.0040616235, y: -0.020267308, z: -0.008223087}
+      rotation: {x: 0.000000023283064, y: -0, z: 1.3552527e-16, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: creature/jaina3/jaina3_bone_85
+      parentName: creature/jaina3/jaina3_bone_40
+      position: {x: -0.012731145, y: -0.016572952, z: -0.007265836}
+      rotation: {x: 0.000000023283066, y: 0.0000000058207656, z: -0.0000000058207643,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_107
+      parentName: creature/jaina3/jaina3_bone_85
+      position: {x: -0.009271285, y: -0.02899462, z: -0.0026461184}
+      rotation: {x: -0, y: -0, z: 0.000000008003552, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_86
+      parentName: creature/jaina3/jaina3_bone_40
+      position: {x: 0.004821878, y: -0.035945415, z: -0.03738406}
+      rotation: {x: 0.000000023283064, y: 0.0000000174623, z: 0.0000000058207665,
+        w: 1}
+      scale: {x: 1, y: 1.0000002, z: 1.0000004}
+    - name: creature/jaina3/jaina3_bone_108
+      parentName: creature/jaina3/jaina3_bone_86
+      position: {x: -0.0020891302, y: -0.019703627, z: -0.008198053}
+      rotation: {x: 0.000000011641532, y: -0.000000023283066, z: -0.000000023283064,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+    - name: creature/jaina3/jaina3_bone_87
+      parentName: creature/jaina3/jaina3_bone_40
+      position: {x: -0.0088543, y: -0.04322272, z: -0.018588841}
+      rotation: {x: 0.000000023283066, y: 0.0000000065483614, z: 2.9558592e-10, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_187
+      parentName: creature/jaina3/jaina3_bone_87
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -1.36880524e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_189
+      parentName: creature/jaina3/jaina3_bone_87
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -1.36880524e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_190
+      parentName: creature/jaina3/jaina3_bone_87
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -1.36880524e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_193
+      parentName: creature/jaina3/jaina3_bone_190
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_191
+      parentName: creature/jaina3/jaina3_bone_87
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -1.36880524e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_88
+      parentName: creature/jaina3/jaina3_bone_40
+      position: {x: -0.0088543, y: -0.04322272, z: -0.018588841}
+      rotation: {x: 0.000000023283066, y: 0.0000000058207656, z: 0.0000000043655746,
+        w: 1}
+      scale: {x: 0.84999996, y: 0.8500001, z: 0.8500001}
+    - name: creature/jaina3/jaina3_bone_186
+      parentName: creature/jaina3/jaina3_bone_88
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -1.3552527e-16, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999998}
+    - name: creature/jaina3/jaina3_bone_41
+      parentName: creature/jaina3/jaina3_bone_34
+      position: {x: -0.012205878, y: -0.053889394, z: -0.04842341}
+      rotation: {x: 0.000000046566125, y: 0.000000034924593, z: 0.000000058207657,
+        w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_42
+      parentName: creature/jaina3/jaina3_bone_34
+      position: {x: -0.024411757, y: -0.10777884, z: -0.09684679}
+      rotation: {x: -0.000000011641536, y: -0.000000023283064, z: 0.000000034924597,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: creature/jaina3/jaina3_bone_43
+      parentName: creature/jaina3/jaina3_bone_34
+      position: {x: -0.025977787, y: -0.08966171, z: -0.12378844}
+      rotation: {x: 0.000000008731147, y: 0.000000017462298, z: 0.000000029103832,
+        w: 1}
+      scale: {x: 0.84999996, y: 0.84999967, z: 0.8500004}
+    - name: creature/jaina3/jaina3_bone_179
+      parentName: creature/jaina3/jaina3_bone_43
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -1.524659e-16, w: 1}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - name: creature/jaina3/jaina3_bone_182
+      parentName: creature/jaina3/jaina3_bone_43
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.0000000029103822, y: -0.000000011641534, z: 0.000000010913935,
+        w: 1}
+      scale: {x: 0.84999967, y: 0.84999996, z: 0.8500007}
+    - name: creature/jaina3/jaina3_bone_171
+      parentName: creature/jaina3/jaina3_bone_34
+      position: {x: -0.00000007636845, y: -0.000000059604645, z: -0.000000059604645}
+      rotation: {x: 0.0000000029103795, y: 0.000000023283064, z: 0.00000004656613,
+        w: 1}
+      scale: {x: 1, y: 1.0000006, z: 1.0000005}
+    - name: creature/jaina3/jaina3_bone_167
+      parentName: creature/jaina3/jaina3_bone_26
+      position: {x: 0.0036645364, y: 0.025042892, z: 0.03883386}
+      rotation: {x: -0.000000026193446, y: 0.000000011641532, z: 0.000000011641532,
+        w: 1}
+      scale: {x: 0.6200002, y: 0.6200002, z: 0.62000006}
+    - name: creature/jaina3/jaina3_bone_19
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: -0.0032062323, y: 0.10490242, z: 0.014643205}
+      rotation: {x: 4.547472e-11, y: 0.0000000018189893, z: 0.000000010228973, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_27
+      parentName: creature/jaina3/jaina3_bone_19
+      position: {x: 0.010073518, y: -0.0094102025, z: 0.0717786}
+      rotation: {x: -3.4347525e-16, y: 0.00000001055014, z: -0.000000018280845, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: creature/jaina3/jaina3_bone_35
+      parentName: creature/jaina3/jaina3_bone_27
+      position: {x: 0.007927198, y: -0.10808945, z: 0.09921513}
+      rotation: {x: 0.000000023283064, y: -0.000000011641534, z: 0.000000011641534,
+        w: 1}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_36
+      parentName: creature/jaina3/jaina3_bone_27
+      position: {x: 0.007927198, y: -0.10808945, z: 0.09921513}
+      rotation: {x: 4.473503e-16, y: -0.000000011641534, z: 0.000000011641534, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_44
+      parentName: creature/jaina3/jaina3_bone_36
+      position: {x: -0.012205865, y: -0.053889453, z: 0.04842338}
+      rotation: {x: 2.6698653e-16, y: -0.000000011641532, z: -0.000000023283064, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: creature/jaina3/jaina3_bone_45
+      parentName: creature/jaina3/jaina3_bone_36
+      position: {x: -0.02441174, y: -0.10777891, z: 0.09684673}
+      rotation: {x: 0.000000023283064, y: 8.881784e-16, z: 0.0000000174623, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: creature/jaina3/jaina3_bone_46
+      parentName: creature/jaina3/jaina3_bone_36
+      position: {x: -0.02441591, y: -0.107782505, z: 0.09740282}
+      rotation: {x: 7.818114e-18, y: -0, z: -0.000000008731149, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_89
+      parentName: creature/jaina3/jaina3_bone_46
+      position: {x: 0.0048015346, y: -0.036081254, z: 0.037506964}
+      rotation: {x: -0.000000011641535, y: -0.000000011641532, z: 0.000000023283064,
+        w: 1}
+      scale: {x: 0.99999976, y: 1.0000001, z: 1.0000002}
+    - name: creature/jaina3/jaina3_bone_109
+      parentName: creature/jaina3/jaina3_bone_89
+      position: {x: -0.002089126, y: -0.019704163, z: 0.008198619}
+      rotation: {x: 0.00000004656613, y: 0.000000017462296, z: -0.000000023283064,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_90
+      parentName: creature/jaina3/jaina3_bone_46
+      position: {x: -0.0070207417, y: -0.035592616, z: 0.0354712}
+      rotation: {x: -0.00000002328306, y: -2.0328788e-16, z: -1.7763568e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: creature/jaina3/jaina3_bone_110
+      parentName: creature/jaina3/jaina3_bone_90
+      position: {x: -0.0038650923, y: -0.02144444, z: 0.010825008}
+      rotation: {x: 0.00000004656613, y: 0.000000011641532, z: 0.000000011641534,
+        w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: creature/jaina3/jaina3_bone_91
+      parentName: creature/jaina3/jaina3_bone_46
+      position: {x: -0.018885178, y: -0.034293234, z: 0.032202866}
+      rotation: {x: 0.000000023283064, y: 0.000000011641532, z: 0.000000005820766,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+    - name: creature/jaina3/jaina3_bone_111
+      parentName: creature/jaina3/jaina3_bone_91
+      position: {x: -0.004061619, y: -0.020266712, z: 0.008223623}
+      rotation: {x: -0.000000034924597, y: -0.000000011641532, z: -0.0000000043655763,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: creature/jaina3/jaina3_bone_92
+      parentName: creature/jaina3/jaina3_bone_46
+      position: {x: -0.012738515, y: -0.016621828, z: 0.0073101223}
+      rotation: {x: -0.000000023283064, y: -0.000000011641534, z: 0.000000014551915,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: creature/jaina3/jaina3_bone_112
+      parentName: creature/jaina3/jaina3_bone_92
+      position: {x: -0.009271092, y: -0.02899462, z: 0.0026462972}
+      rotation: {x: 0.000000023283064, y: 0.000000011641534, z: -0.000000010186341,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+    - name: creature/jaina3/jaina3_bone_93
+      parentName: creature/jaina3/jaina3_bone_46
+      position: {x: 0.014811906, y: -0.035509765, z: 0.035513967}
+      rotation: {x: 0.000000023283064, y: 0.000000005820765, z: 0.000000008731149,
+        w: 1}
+      scale: {x: 0.9999999, y: 1.0000001, z: 0.99999994}
+    - name: creature/jaina3/jaina3_bone_113
+      parentName: creature/jaina3/jaina3_bone_93
+      position: {x: 0.000107361004, y: -0.015427709, z: 0.0065222383}
+      rotation: {x: -0.000000011641533, y: 1.3322676e-15, z: 0.0000000029103828, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_94
+      parentName: creature/jaina3/jaina3_bone_46
+      position: {x: -0.005957809, y: -0.041244984, z: 0.015986174}
+      rotation: {x: 3.0610103e-17, y: -0.000000005820766, z: 0.000000016007107, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_188
+      parentName: creature/jaina3/jaina3_bone_94
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: 1.7817424e-25, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: creature/jaina3/jaina3_bone_192
+      parentName: creature/jaina3/jaina3_bone_94
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: 1.7817424e-25, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: creature/jaina3/jaina3_bone_95
+      parentName: creature/jaina3/jaina3_bone_46
+      position: {x: -0.008854395, y: -0.043222785, z: 0.018033415}
+      rotation: {x: -5.1427605e-18, y: 1.7670484e-26, z: 0.000000008003553, w: 1}
+      scale: {x: 0.8500001, y: 0.85000014, z: 0.85}
+    - name: creature/jaina3/jaina3_bone_185
+      parentName: creature/jaina3/jaina3_bone_95
+      position: {x: -0, y: 0, z: 0.0005554888}
+      rotation: {x: -0, y: -0, z: 9.1e-44, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: creature/jaina3/jaina3_bone_180
+      parentName: creature/jaina3/jaina3_bone_46
+      position: {x: 0.015129665, y: -0.036471426, z: 0.026914863}
+      rotation: {x: 0.000000023283073, y: 0.00000006984919, z: 0.000000032014214,
+        w: 1}
+      scale: {x: 0.7999997, y: 0.80000144, z: 0.7999998}
+    - name: creature/jaina3/jaina3_bone_181
+      parentName: creature/jaina3/jaina3_bone_46
+      position: {x: -0.09945534, y: -0.35020953, z: 0.23796207}
+      rotation: {x: -2.1988975e-17, y: -1.00974196e-25, z: 0.000000011641532, w: 1}
+      scale: {x: 0.84999996, y: 0.8500007, z: 0.8499992}
+    - name: creature/jaina3/jaina3_bone_183
+      parentName: creature/jaina3/jaina3_bone_46
+      position: {x: -0.0063697877, y: 0.034112275, z: 0.03751638}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: creature/jaina3/jaina3_bone_184
+      parentName: creature/jaina3/jaina3_bone_46
+      position: {x: -0.0063697877, y: 0.034112275, z: 0.03751638}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: creature/jaina3/jaina3_bone_170
+      parentName: creature/jaina3/jaina3_bone_36
+      position: {x: -0.0000000037252903, y: 0, z: -0.00000014901161}
+      rotation: {x: -0.000000011641535, y: 0.000000011641532, z: -0.000000011641532,
+        w: 1}
+      scale: {x: 0.9999999, y: 1.0000005, z: 1.0000002}
+    - name: creature/jaina3/jaina3_bone_37
+      parentName: creature/jaina3/jaina3_bone_27
+      position: {x: 0.0039635953, y: -0.054044724, z: 0.049607594}
+      rotation: {x: 0.000000011641532, y: -0.000000011641534, z: 0.0000000174623,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_166
+      parentName: creature/jaina3/jaina3_bone_27
+      position: {x: 0.003664646, y: 0.025042832, z: -0.03883386}
+      rotation: {x: 5.8383953e-16, y: -0.000000023283066, z: 0.000000011641534, w: 1}
+      scale: {x: 0.61999995, y: 0.61999995, z: 0.6200012}
+    - name: creature/jaina3/jaina3_bone_20
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: -0.05877218, y: 0.029334657, z: -0.041225817}
+      rotation: {x: -4.5474742e-11, y: 7.2759565e-10, z: 0.0000000011532104, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_21
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: 0.0585996, y: 0.1032362, z: -0.00027748974}
+      rotation: {x: 4.5474735e-11, y: 7.2759565e-10, z: 7.858594e-10, w: 1}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999998}
+    - name: creature/jaina3/jaina3_bone_28
+      parentName: creature/jaina3/jaina3_bone_21
+      position: {x: -0, y: -0.117672555, z: 0}
+      rotation: {x: -6.938894e-18, y: 0.0000000029103826, z: -0.000000006006928, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_38
+      parentName: creature/jaina3/jaina3_bone_28
+      position: {x: -0, y: -0.117672555, z: 0}
+      rotation: {x: 9.300493e-18, y: -0.0000000029103826, z: 0.0000000051954885, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999998}
+    - name: creature/jaina3/jaina3_bone_47
+      parentName: creature/jaina3/jaina3_bone_38
+      position: {x: -0, y: -0.117672555, z: 0}
+      rotation: {x: 3.6379788e-10, y: -0, z: 0.000000002410161, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_22
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: 0.0036317762, y: 0.13335198, z: -0.00027748974}
+      rotation: {x: 9.094947e-11, y: -0, z: 6.636469e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_29
+      parentName: creature/jaina3/jaina3_bone_22
+      position: {x: -0, y: 0.0131700635, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_39
+      parentName: creature/jaina3/jaina3_bone_29
+      position: {x: -0.0016916301, y: 0.015174329, z: 0}
+      rotation: {x: 6.82121e-10, y: 7.2759565e-10, z: 0.0000000045517368, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_48
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.060703382, y: 0.02884376, z: 0.009550777}
+      rotation: {x: -0, y: -0, z: -4.963083e-19, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_49
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.042513218, y: 0.0102833845, z: -0.025468003}
+      rotation: {x: -0.0000000021827873, y: 3.6379788e-10, z: -0.000000004678214,
+        w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_50
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.04867379, y: 0.02523207, z: -0.026515879}
+      rotation: {x: -0.0000000014551915, y: 7.2759576e-10, z: -0.0000000035697674,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_51
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.059128072, y: 0.02051521, z: -0.015723228}
+      rotation: {x: -7.2759576e-10, y: -0, z: 0.0000000014097168, w: 1}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: creature/jaina3/jaina3_bone_52
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.049681757, y: 0.039918065, z: -0.014106723}
+      rotation: {x: -7.2759576e-10, y: -7.2759576e-10, z: -0.0000000024328988, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_53
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.058822062, y: 0.062186997, z: -0.019240184}
+      rotation: {x: -0.0000000036379788, y: -3.6379788e-10, z: -0.000000013028512,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: creature/jaina3/jaina3_bone_54
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.060350645, y: 0.053036194, z: -0.019145068}
+      rotation: {x: 0.0000000050931708, y: -0, z: -0.000000002535217, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_55
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.05349327, y: 0.049871854, z: -0.026385745}
+      rotation: {x: -7.2759576e-10, y: 0.0000000029103826, z: -0.0000000012619243,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: creature/jaina3/jaina3_bone_56
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.05845663, y: 0.03621443, z: -0.01575697}
+      rotation: {x: -1.8189894e-10, y: -7.275959e-10, z: -0.0000000011453953, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 0.99999976}
+    - name: creature/jaina3/jaina3_bone_57
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.056841772, y: 0.009236872, z: 0.011037769}
+      rotation: {x: -0.000000006548361, y: 5.551115e-17, z: -0.0000000011255001, w: 1}
+      scale: {x: 0.9999999, y: 1.0000001, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_58
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.05962769, y: 0.009315107, z: 0.007909307}
+      rotation: {x: -0.0000000036379788, y: 2.728484e-10, z: -0.000000003899459, w: 1}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_59
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.06248904, y: 0.010271536, z: 0.003415967}
+      rotation: {x: -7.2759576e-10, y: -0, z: 0.0000000035129224, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: creature/jaina3/jaina3_bone_60
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.05922964, y: 0.044230655, z: -0.013291975}
+      rotation: {x: 0.0000000050931708, y: 0.000000023283064, z: 0.0000000012846608,
+        w: 1}
+      scale: {x: 0.9999999, y: 1.0000002, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_61
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.059128854, y: 0.02037841, z: 0.01569884}
+      rotation: {x: -7.2759576e-10, y: -0, z: -0.0000000013187678, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_62
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.053302407, y: 0.0123048425, z: 0}
+      rotation: {x: -0, y: -0, z: -4.963083e-19, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_63
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.048673823, y: 0.025231805, z: 0.0265158}
+      rotation: {x: -7.2759576e-10, y: -0, z: -0.0000000027739593, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_64
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.07062199, y: 0.024548821, z: 0}
+      rotation: {x: -0, y: -0, z: -0.0000000023078432, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: creature/jaina3/jaina3_bone_65
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.042504415, y: 0.010374194, z: 0.025505027}
+      rotation: {x: 7.2759576e-10, y: -0.0000000014551915, z: 0.000000001887201, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999976}
+    - name: creature/jaina3/jaina3_bone_66
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.058456633, y: 0.03621443, z: 0.01575697}
+      rotation: {x: 7.275953e-10, y: -3.6379788e-10, z: 0.0000000015234032, w: 1}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: creature/jaina3/jaina3_bone_67
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.059229635, y: 0.044230603, z: 0.013291973}
+      rotation: {x: 0.000000016734703, y: 0.000000011641532, z: -0.0000000016257224,
+        w: 1}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_68
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.06642994, y: 0.02097731, z: 0.0041512097}
+      rotation: {x: -7.2759576e-10, y: -0, z: -0.0000000040756736, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_69
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.05873485, y: 0.06217185, z: 0.019387063}
+      rotation: {x: -0.0000000036379788, y: 0.0000000014551912, z: -0.0000000061731953,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: creature/jaina3/jaina3_bone_70
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.06340272, y: 0.04874962, z: 0.009079123}
+      rotation: {x: -7.2759576e-10, y: -7.275959e-10, z: -0.0000000034447118, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: creature/jaina3/jaina3_bone_71
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.060379412, y: 0.052687254, z: 0.019021163}
+      rotation: {x: 0.0000000021827877, y: -0, z: 6.48015e-10, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_72
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.05321476, y: 0.04984282, z: 0.026618902}
+      rotation: {x: -0.000000012369126, y: 0.0000000021827873, z: 0.0000000019667818,
+        w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: creature/jaina3/jaina3_bone_73
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.06643013, y: 0.020976093, z: -0.0041509275}
+      rotation: {x: -0.0000000012732926, y: -7.275959e-10, z: 3.7516656e-10, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: creature/jaina3/jaina3_bone_74
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.06347766, y: 0.048501346, z: -0.0087124165}
+      rotation: {x: -7.2759576e-10, y: -0.000000002182787, z: -0.0000000034447114,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_75
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.06248936, y: 0.0102728065, z: -0.0034160053}
+      rotation: {x: -0, y: -0, z: -5.229599e-10, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: creature/jaina3/jaina3_bone_76
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.056842525, y: 0.009239574, z: -0.011037974}
+      rotation: {x: -7.2759576e-10, y: -0, z: 0.000000002376054, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 0.99999994}
+    - name: creature/jaina3/jaina3_bone_77
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.059628114, y: 0.009316643, z: -0.007909386}
+      rotation: {x: -7.2759576e-10, y: -0, z: 0.0000000031718628, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_78
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.060703382, y: 0.02884376, z: -0.009550777}
+      rotation: {x: -0, y: -0, z: -4.963083e-19, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_79
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.0653206, y: 0.050256237, z: 0.00011235916}
+      rotation: {x: -0, y: -0, z: 0.000000004587262, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: creature/jaina3/jaina3_bone_80
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.01278415, y: 0.023060322, z: 0}
+      rotation: {x: -7.2759576e-10, y: -0, z: -0.0000000029444895, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_96
+      parentName: creature/jaina3/jaina3_bone_80
+      position: {x: -0.047298532, y: -0.02907765, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: creature/jaina3/jaina3_bone_97
+      parentName: creature/jaina3/jaina3_bone_80
+      position: {x: -0.04797409, y: -0.018233545, z: 0.003575549}
+      rotation: {x: -0, y: -3.6379788e-10, z: 0.0000000023987923, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: creature/jaina3/jaina3_bone_98
+      parentName: creature/jaina3/jaina3_bone_80
+      position: {x: -0.04584439, y: -0.017189013, z: 0.0076779095}
+      rotation: {x: -0, y: -1.158053e-18, z: 0.0000000015916157, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_99
+      parentName: creature/jaina3/jaina3_bone_80
+      position: {x: -0.0432489, y: -0.015593482, z: 0.011172236}
+      rotation: {x: 0.000000011641532, y: -0.0000000014551913, z: 0.0000000012278178,
+        w: 1}
+      scale: {x: 0.9999998, y: 0.9999999, z: 1}
+    - name: creature/jaina3/jaina3_bone_100
+      parentName: creature/jaina3/jaina3_bone_80
+      position: {x: -0.04584446, y: -0.0171888, z: -0.007677937}
+      rotation: {x: -0.0000000029103826, y: -7.275959e-10, z: 0.0000000015916157,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: creature/jaina3/jaina3_bone_101
+      parentName: creature/jaina3/jaina3_bone_80
+      position: {x: -0.043247838, y: -0.0155970855, z: -0.011171965}
+      rotation: {x: 0.000000011641534, y: -0.0000000043655746, z: -0.000000014688338,
+        w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: creature/jaina3/jaina3_bone_102
+      parentName: creature/jaina3/jaina3_bone_80
+      position: {x: -0.047973905, y: -0.018234126, z: -0.0035755357}
+      rotation: {x: -0.0000000014551915, y: -3.9704678e-18, z: -4.3200976e-10, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: creature/jaina3/jaina3_bone_103
+      parentName: creature/jaina3/jaina3_bone_80
+      position: {x: -0.040355757, y: -0.018330455, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: creature/jaina3/jaina3_bone_81
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.049681757, y: 0.039918065, z: 0.014101009}
+      rotation: {x: -7.2759576e-10, y: -7.2759576e-10, z: -0.0000000024328988, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_172
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -4.963083e-19, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_173
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.071570024, y: -0.00018256903, z: 0}
+      rotation: {x: -0, y: -0, z: -4.963083e-19, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_174
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.012675781, y: 0.095318496, z: 0}
+      rotation: {x: -0, y: -0, z: -4.963083e-19, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_177
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0.000000011175871, y: -0.0031052828, z: -0.07150171}
+      rotation: {x: -0, y: -0, z: -4.963083e-19, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_178
+      parentName: creature/jaina3/jaina3_bone_39
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -4.963083e-19, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_23
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: -0.058775224, y: 0.029334592, z: 0.041225784}
+      rotation: {x: -4.5474742e-11, y: 7.2759565e-10, z: 0.0000000011532104, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_156
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: 0.05782187, y: 0.07580262, z: -0.00027748974}
+      rotation: {x: -0, y: -0, z: -9.926172e-20, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_157
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: -0.036115453, y: 0.029694378, z: -0.00027748974}
+      rotation: {x: -0, y: -0, z: -9.926172e-20, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_158
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: 0.015845578, y: 0.029691517, z: -0.00027410005}
+      rotation: {x: -0, y: -0, z: -9.926172e-20, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_159
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: 0.066305265, y: 0.16142839, z: 0.09688522}
+      rotation: {x: 0.0000000029558587, y: 0.0000000065483623, z: 0.000000015231196,
+        w: 1}
+      scale: {x: 0.8500008, y: 0.8500003, z: 0.8500012}
+    - name: creature/jaina3/jaina3_bone_160
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: 0.062626995, y: 0.158948, z: -0.09881931}
+      rotation: {x: 4.5474707e-11, y: 0.0000000036379784, z: 0.000000015231192, w: 1}
+      scale: {x: 0.84999996, y: 0.84999895, z: 0.8500003}
+    - name: creature/jaina3/jaina3_bone_161
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: 0.098930635, y: -0.013047397, z: -0.00025183446}
+      rotation: {x: 0.0000000058662413, y: 7.2759565e-10, z: -0.0000000022311046,
+        w: 1}
+      scale: {x: 0.75000006, y: 0.75, z: 0.7500007}
+    - name: creature/jaina3/jaina3_bone_162
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: 0.107457794, y: 0.06639284, z: -0.03610811}
+      rotation: {x: 4.54745e-11, y: 0.0000000065483614, z: -0.000000019693402, w: 1}
+      scale: {x: 0.84999985, y: 0.85000014, z: 0.8500005}
+    - name: creature/jaina3/jaina3_bone_163
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: 0.07429472, y: 0.067136526, z: 0.035700772}
+      rotation: {x: -0.0000000115960574, y: 7.275961e-10, z: -0.000000042976467, w: 1}
+      scale: {x: 0.8499997, y: 0.84999996, z: 0.85000026}
+    - name: creature/jaina3/jaina3_bone_164
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: 0.017536702, y: 0.0036095977, z: -0.00027748974}
+      rotation: {x: -0, y: -0, z: -9.926172e-20, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_165
+      parentName: creature/jaina3/jaina3_bone_14
+      position: {x: 0.12142881, y: 0.15030193, z: 0.05785459}
+      rotation: {x: 4.5474735e-11, y: 7.2759565e-10, z: 0.00000000386251, w: 1}
+      scale: {x: 0.90000004, y: 0.90000063, z: 0.9000008}
+    - name: creature/jaina3/jaina3_bone_153
+      parentName: creature/jaina3/jaina3_bone_8
+      position: {x: -0.034723043, y: 0.012794197, z: 0.045424774}
+      rotation: {x: -0, y: -0, z: 6.058451e-25, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: creature/jaina3/jaina3_bone_138
+      parentName: creature/jaina3/jaina3_bone_3
+      position: {x: -0.0011714643, y: -0.050744534, z: 0}
+      rotation: {x: -0, y: -0, z: -4.235164e-18, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_139
+      parentName: creature/jaina3/jaina3_bone_3
+      position: {x: -0.0011714643, y: -0.050744534, z: 0}
+      rotation: {x: -0, y: -0, z: -4.235164e-18, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_140
+      parentName: creature/jaina3/jaina3_bone_3
+      position: {x: -0.0000000016298145, y: 0.012452841, z: 0.049206655}
+      rotation: {x: -0, y: -0, z: -4.235164e-18, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_141
+      parentName: creature/jaina3/jaina3_bone_3
+      position: {x: 0.000000022002496, y: 0.0124529, z: 0.04920681}
+      rotation: {x: -0, y: -0, z: -4.235164e-18, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_142
+      parentName: creature/jaina3/jaina3_bone_3
+      position: {x: 0.000000022002496, y: 0.0124529, z: 0.04920681}
+      rotation: {x: -0, y: -0, z: -4.235164e-18, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_143
+      parentName: creature/jaina3/jaina3_bone_3
+      position: {x: 0.000000022002496, y: 0.0124518275, z: 0.049203377}
+      rotation: {x: -0, y: -0, z: -4.235164e-18, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_144
+      parentName: creature/jaina3/jaina3_bone_3
+      position: {x: 0.000000022002496, y: 0.0124518275, z: 0.049203377}
+      rotation: {x: -0, y: -0, z: -4.235164e-18, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_145
+      parentName: creature/jaina3/jaina3_bone_3
+      position: {x: 0.000000022002496, y: 0.0124518275, z: 0.049203377}
+      rotation: {x: -0, y: -0, z: -4.235164e-18, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_146
+      parentName: creature/jaina3/jaina3_bone_3
+      position: {x: 0.000000022002496, y: 0.0124518275, z: 0.049203377}
+      rotation: {x: -0, y: -0, z: -4.235164e-18, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_147
+      parentName: creature/jaina3/jaina3_bone_3
+      position: {x: 0.000000022002496, y: 0.0124518275, z: 0.049203377}
+      rotation: {x: -0, y: -0, z: -4.235164e-18, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_148
+      parentName: creature/jaina3/jaina3_bone_3
+      position: {x: 0.000000022002496, y: 0.0124518275, z: 0.049203377}
+      rotation: {x: -0, y: -0, z: -4.235164e-18, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_149
+      parentName: creature/jaina3/jaina3_bone_3
+      position: {x: -0.0000000016298145, y: 0.012452841, z: 0.04920668}
+      rotation: {x: -0, y: -0, z: -4.235164e-18, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_114
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0, y: 1.0504415, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_115
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 0.93999994, y: 0.93999994, z: 0.93999994}
+    - name: creature/jaina3/jaina3_bone_116
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0.0060240934, y: 0.99321747, z: 0.009246349}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.17647, y: 1.17647, z: 1.17647}
+    - name: creature/jaina3/jaina3_bone_117
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0, y: 0.67582685, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_118
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_119
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0.08292944, y: 0, z: -0.026763367}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_120
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0.0806758, y: 0, z: 0.015675303}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_121
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0.012997812, y: 0, z: -0.019671673}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_122
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0.06768424, y: 0, z: 0.0035919647}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_123
+      parentName: creature/jaina3/jaina3 1
+      position: {x: 0.11291298, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_124
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_125
+      parentName: creature/jaina3/jaina3 1
+      position: {x: 0.055936847, y: 0, z: 0.040026363}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_126
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0.04175657, y: 0, z: -0.10664652}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_127
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_128
+      parentName: creature/jaina3/jaina3 1
+      position: {x: 0.19622833, y: 0, z: -0.024362572}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_129
+      parentName: creature/jaina3/jaina3 1
+      position: {x: 0.1930731, y: 0, z: 0.03259657}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_130
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0.073902875, y: 0, z: 0.020920062}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_131
+      parentName: creature/jaina3/jaina3 1
+      position: {x: 0.039602373, y: 0, z: -0.01926676}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_132
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_133
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_134
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: creature/jaina3/jaina3_bone_135
+      parentName: creature/jaina3/jaina3 1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -559,7 +1594,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2

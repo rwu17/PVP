@@ -2123,6 +2123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4223880369317530}
   - component: {fileID: 95055072476863642}
+  - component: {fileID: 114572002026147168}
   m_Layer: 8
   m_Name: jainaTheOne
   m_TagString: Untagged
@@ -3118,7 +3119,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1516710900420536}
-  m_LocalRotation: {x: -0.14129819, y: 0.018127574, z: -0.015899945, w: 0.9896734}
+  m_LocalRotation: {x: -0.1412982, y: 0.018127574, z: -0.015899947, w: 0.9896734}
   m_LocalPosition: {x: -0.018885178, y: -0.034293234, z: 0.032202866}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4539,7 +4540,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1934886517573192}
-  m_LocalRotation: {x: 0.018127471, y: 0.005157468, z: 0.008636492, w: 0.99978507}
+  m_LocalRotation: {x: 0.018127473, y: 0.005157468, z: 0.008636493, w: 0.99978507}
   m_LocalPosition: {x: -0.047973905, y: -0.018234126, z: -0.0035755357}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -4710,7 +4711,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1026540853754794}
-  m_LocalRotation: {x: -0.00021321965, y: 0.1080933, z: 0.06082161, w: 0.99227846}
+  m_LocalRotation: {x: -0.00021321967, y: 0.1080933, z: 0.060821615, w: 0.99227846}
   m_LocalPosition: {x: 0.015876653, y: -0.2510673, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5883,6 +5884,18 @@ MonoBehaviour:
   collisionLayers:
     serializedVersion: 2
     m_Bits: 567
+--- !u!114 &114572002026147168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1741012666218624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62e1bbb0af7af441864f1b0d5162d8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!114 &114693680048782334
 MonoBehaviour:
   m_ObjectHideFlags: 1
