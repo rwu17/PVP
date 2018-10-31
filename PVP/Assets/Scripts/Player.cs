@@ -5,29 +5,40 @@ using UnityEngine.Networking;
 
 public class Player : NetworkBehaviour {
 
+    public float moveSpeed;
+    public float jumpForce;
+    public float gravityScale;
     public GameObject playerSphere;
+    public CharacterController controller;
+
+    private Vector3 moveDirection;
+
+    private void Start()
+    {
+        controller = GetComponent<CharacterController>();
+    }
 
     void Update()
     {
         if(isLocalPlayer == true)
         {
-            if (Input.GetKey(KeyCode.D))
+            moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, 0f, Input.GetAxis("Vertical") * moveSpeed);
+
+            if (Input.GetButtonDown("Jump"))
             {
-                this.transform.Translate(Vector3.right * Time.deltaTime * 3f);
+                moveDirection.y = jumpForce;
             }
 
-            if (Input.GetKey(KeyCode.I))
-            {
-                CmdSpawn();
-            }
+            moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
+            controller.Move(moveDirection * Time.deltaTime);
         }
     }
-
+    /*
     [Command]
     public void CmdSpawn()
     {
         GameObject sphere = (GameObject)Instantiate(playerSphere, transform.position, Quaternion.identity);
         NetworkServer.SpawnWithClientAuthority(sphere, connectionToClient);
     }
-
+    */
 }
