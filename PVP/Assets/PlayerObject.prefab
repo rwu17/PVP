@@ -3548,7 +3548,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1898639069150542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4824486910445136}
@@ -6003,11 +6003,11 @@ MonoBehaviour:
   m_SendInterval: 0.033333335
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
-  m_SyncSpin: 0
+  m_SyncSpin: 1
   m_MovementTheshold: 0.001
   m_VelocityThreshold: 0.0001
   m_SnapThreshold: 5
-  m_InterpolateRotation: 1
+  m_InterpolateRotation: 0
   m_InterpolateMovement: 1
 --- !u!114 &114832018932299164
 MonoBehaviour:
@@ -6023,9 +6023,8 @@ MonoBehaviour:
   moveSpeed: 10
   jumpForce: 20
   gravityScale: 2
-  playerSphere: {fileID: 1398498433294770, guid: 66cc8668d1d4c144893504a045896f16,
-    type: 2}
   controller: {fileID: 0}
+  playerCamera: {fileID: 1322807410164544}
 --- !u!137 &137216092217424458
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

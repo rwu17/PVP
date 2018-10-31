@@ -30,11 +30,6 @@ public class CameraFollow : MonoBehaviour {
 
         rotY = rot.y;
         rotX = rot.x;
-
-        Cursor.lockState = CursorLockMode.Locked;
-
-        Cursor.visible = false;
-
     }
 	
 	// Update is called once per frame
@@ -43,8 +38,17 @@ public class CameraFollow : MonoBehaviour {
         float inputX = Input.GetAxis("RightStickHorizontal");
         float inputZ = Input.GetAxis("RightStickVertical");
 
-        mouseX = Input.GetAxis("Mouse X");
-        mouseY = Input.GetAxis("Mouse Y");
+        if (Input.GetMouseButton(0))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            mouseX = Input.GetAxis("Mouse X");
+            mouseY = Input.GetAxis("Mouse Y");
+        } else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
 
         finalInputX = inputX + mouseX;
         finalInputZ = inputZ + mouseY;

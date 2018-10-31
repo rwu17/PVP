@@ -8,13 +8,22 @@ public class Player : NetworkBehaviour {
     public float moveSpeed;
     public float jumpForce;
     public float gravityScale;
-    public GameObject playerSphere;
     public CharacterController controller;
 
     private Vector3 moveDirection;
 
+    public GameObject playerCamera;
+
     private void Start()
     {
+        if (isLocalPlayer == true)
+        {
+            playerCamera.GetComponent<Camera>().enabled = true;
+        } else
+        {
+            playerCamera.GetComponent<Camera>().enabled = false;
+        }
+
         controller = GetComponent<CharacterController>();
     }
 
