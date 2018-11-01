@@ -7,10 +7,7 @@ public class WowMovement : NetworkBehaviour {
 
     //For network purpose
     public GameObject playerCamera;
-
-    //Animations
-    public Animator animator;
-
+    
     //Var definition 
     public bool swimming = false;                    //Can be triggered to slow down the movements (like when u swim) 
     public string moveStatus = "idle";               //movestatus for animations 
@@ -39,12 +36,12 @@ public class WowMovement : NetworkBehaviour {
         if (isLocalPlayer == true)
         {
             playerCamera.GetComponent<Camera>().enabled = true;
-            GetComponent<Animator>();
+            //animator = this.gameObject.GetComponent<Animator>();
         }
         else
         {
             playerCamera.GetComponent<Camera>().enabled = false;
-            GetComponent<Animator>();
+            //animator = this.gameObject.GetComponent<Animator>();
         }
     }
 
@@ -67,12 +64,6 @@ public class WowMovement : NetworkBehaviour {
 
                 //movedirection 
                 moveDirection = new Vector3((Input.GetMouseButton(1) ? Input.GetAxis("Horizontal") : 0), 0, Input.GetAxis("Vertical"));
-
-                //Animation
-                float horizontal = Input.GetAxis("Horizontal");
-                float vertical = Input.GetAxis("Vertical");
-                animator.SetFloat();
-
 
                 //pushbuffer to avoid on/off flipping 
                 if (pbuffer > 0)
@@ -207,6 +198,5 @@ public class WowMovement : NetworkBehaviour {
             if (jumping && swimming)
                 moveStatus = "swimup";
         }
-
     }
 }

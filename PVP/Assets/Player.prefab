@@ -2122,8 +2122,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4223880369317530}
-  - component: {fileID: 95055072476863642}
-  - component: {fileID: 114572002026147168}
   m_Layer: 8
   m_Name: jaina
   m_TagString: Untagged
@@ -2698,6 +2696,9 @@ GameObject:
   - component: {fileID: 114693680048782334}
   - component: {fileID: 114775806580607126}
   - component: {fileID: 114739587391893136}
+  - component: {fileID: 95981490614391714}
+  - component: {fileID: 114170263723099464}
+  - component: {fileID: 114795066767266022}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -5838,17 +5839,17 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1212886365617546}
   m_Enabled: 1
---- !u!95 &95055072476863642
+--- !u!95 &95981490614391714
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1741012666218624}
+  m_GameObject: {fileID: 1913563413317830}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3abb22793e70b584f8e67b28647919c5, type: 3}
   m_Controller: {fileID: 9100000, guid: 1ddff63d70aecea49bcc9381d5a8f5b5, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -5856,6 +5857,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114170263723099464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913563413317830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 95981490614391714}
+  m_ParameterSendBits: 3
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!114 &114401257762724548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5884,18 +5904,6 @@ MonoBehaviour:
   collisionLayers:
     serializedVersion: 2
     m_Bits: 567
---- !u!114 &114572002026147168
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1741012666218624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b62e1bbb0af7af441864f1b0d5162d8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!114 &114693680048782334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5969,6 +5977,19 @@ MonoBehaviour:
     i15: 172
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114795066767266022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913563413317830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6da4c817fe881f4b97d6ba5d3dd315c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 95981490614391714}
+  InputY: 0
 --- !u!137 &137543784437129016
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
