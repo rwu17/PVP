@@ -5920,9 +5920,9 @@ MonoBehaviour:
   moveStatus: idle
   jumpSpeed: 8
   gravity: 20
-  runSpeed: 10
-  walkSpeed: 4
-  rotateSpeed: 250
+  runSpeed: 6
+  walkSpeed: 6
+  rotateSpeed: 100
   walkBackMod: 0.75
 --- !u!114 &114739587391893136
 MonoBehaviour:
