@@ -2125,7 +2125,7 @@ GameObject:
   - component: {fileID: 95055072476863642}
   - component: {fileID: 114572002026147168}
   m_Layer: 8
-  m_Name: jainaTheOne
+  m_Name: jaina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,6 +8,9 @@ public class WowMovement : NetworkBehaviour {
     //For network purpose
     public GameObject playerCamera;
 
+    //Animations
+    public Animator animator;
+
     //Var definition 
     public bool swimming = false;                    //Can be triggered to slow down the movements (like when u swim) 
     public string moveStatus = "idle";               //movestatus for animations 
@@ -16,7 +19,7 @@ public class WowMovement : NetworkBehaviour {
     public float jumpSpeed = 8.0f;                  //Jumpspeed / Jumpheight 
     public float gravity = 20.0f;                   //Gravity for jump 
     public float runSpeed = 10.0f;                  //Speed when the Character is running 
-    public float walkSpeed = 4.0f;                  //Speed when the Character is walking (normal movement) 
+    public float walkSpeed = 10.0f;                  //Speed when the Character is walking (normal movement) 
     public float rotateSpeed = 250.0f;              //Rotationspeed of the Character 
     public float walkBackMod = 0.75f;               //Speed in Percent for walk backwards and sidewalk 
 
@@ -36,10 +39,12 @@ public class WowMovement : NetworkBehaviour {
         if (isLocalPlayer == true)
         {
             playerCamera.GetComponent<Camera>().enabled = true;
+            GetComponent<Animator>();
         }
         else
         {
             playerCamera.GetComponent<Camera>().enabled = false;
+            GetComponent<Animator>();
         }
     }
 
@@ -63,6 +68,12 @@ public class WowMovement : NetworkBehaviour {
                 //movedirection 
                 moveDirection = new Vector3((Input.GetMouseButton(1) ? Input.GetAxis("Horizontal") : 0), 0, Input.GetAxis("Vertical"));
 
+                //Animation
+                float horizontal = Input.GetAxis("Horizontal");
+                float vertical = Input.GetAxis("Vertical");
+                animator.SetFloat();
+
+
                 //pushbuffer to avoid on/off flipping 
                 if (pbuffer > 0)
                     pbuffer -= Time.deltaTime;
@@ -76,7 +87,7 @@ public class WowMovement : NetworkBehaviour {
                 }
                 if (mouseSideButton && ((Input.GetAxis("Vertical") != 0) || Input.GetButton("Jump")) || (Input.GetMouseButton(0) && Input.GetMouseButton(1)))
                 {
-                    Cursor.lockState = CursorLockMode.Confined;
+                    Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
                     mouseSideButton = false;
                 }
@@ -89,7 +100,7 @@ public class WowMovement : NetworkBehaviour {
                 //L+R MouseButton Movement 
                 if (Input.GetMouseButton(0) && Input.GetMouseButton(1) || mouseSideButton)
                 {
-                    Cursor.lockState = CursorLockMode.Confined;
+                    Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
                     moveDirection.z += 1;
                 }
@@ -107,7 +118,7 @@ public class WowMovement : NetworkBehaviour {
                 // if moving forward and to the side at the same time, compensate for distance 
                 if (Input.GetMouseButton(1) && (Input.GetAxis("Horizontal") != 0) && (Input.GetAxis("Vertical") != 0))
                 {
-                    Cursor.lockState = CursorLockMode.Confined;
+                    Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
                     moveDirection *= 0.7f;
                 }
@@ -136,7 +147,7 @@ public class WowMovement : NetworkBehaviour {
                 if ((moveDirection.x == 0) && (moveDirection.z == 0))
                     moveStatus = "idle";
                 if (moveDirection.z > 0)
-                    moveStatus = isWalking ? "walking" : "running";
+                    moveStatus = isWalking ? "walking" : "running"; //animator.SetInteger("Condition", 1);
                 if (moveDirection.z < 0)
                     moveStatus = isWalking ? "backwalking" : "backrunning";
                 if (moveDirection.x > 0)
@@ -168,7 +179,7 @@ public class WowMovement : NetworkBehaviour {
             // Allow turning at anytime. Keep the character facing in the same direction as the Camera if the right mouse button is down. 
             if (Input.GetMouseButton(1))
             {
-                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
             }
@@ -196,6 +207,6 @@ public class WowMovement : NetworkBehaviour {
             if (jumping && swimming)
                 moveStatus = "swimup";
         }
-        
+
     }
 }
