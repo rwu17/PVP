@@ -5920,8 +5920,8 @@ MonoBehaviour:
   InputY: 0
   swimming: 0
   moveStatus: idle
-  jumpSpeed: 10
-  gravity: 20
+  jumpSpeed: 8
+  gravity: 22
   runSpeed: 6
   walkSpeed: 6
   rotateSpeed: 100

@@ -212,14 +212,22 @@ public class WowMovement : NetworkBehaviour {
             return;
         }
 
-        InputY = Input.GetAxis("Vertical");
-        InputX = Input.GetAxis("Horizontal");
-        animator.SetFloat("X", InputX);
-        animator.SetFloat("Y", InputY);
-
-        
         if (grounded)
         {
+            InputY = Input.GetAxis("Vertical");
+            InputX = Input.GetAxis("Horizontal");
+            animator.SetFloat("X", InputX);
+            animator.SetFloat("Y", InputY);
+
+            if (Input.GetMouseButton(0) && Input.GetMouseButton(1) || mouseSideButton)
+            {
+                animator.SetBool("MouseWalk", true);
+            }
+            else
+            {
+                animator.SetBool("MouseWalk", false);
+            }
+
             if (Input.GetButton("Jump"))
             {
                 animator.SetBool("In Air", true);
