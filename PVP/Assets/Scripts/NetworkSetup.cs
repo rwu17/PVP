@@ -9,6 +9,7 @@ public class NetworkSetup : NetworkBehaviour {
     public Animator animator;
     float InputX;
     public float InputY;
+    private CharacterController controller;
 
     void Update()
     {
@@ -25,5 +26,17 @@ public class NetworkSetup : NetworkBehaviour {
         InputX = Input.GetAxis("Horizontal");
         animator.SetFloat("X", InputX);
         animator.SetFloat("Y", InputY);
+
+        if (controller.isGrounded)
+        {
+            if (Input.GetButton("Jump"))
+            {
+                animator.SetBool("In Air", true);
+            }
+            else
+            {
+                animator.SetBool("In Air", false);
+            }
+        }
     }
 }

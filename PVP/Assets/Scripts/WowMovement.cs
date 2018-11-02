@@ -7,7 +7,12 @@ public class WowMovement : NetworkBehaviour {
 
     //For network purpose
     public GameObject playerCamera;
-    
+
+    //Animations
+    public Animator animator;
+    float InputX;
+    public float InputY;
+
     //Var definition 
     public bool swimming = false;                    //Can be triggered to slow down the movements (like when u swim) 
     public string moveStatus = "idle";               //movestatus for animations 
@@ -22,7 +27,7 @@ public class WowMovement : NetworkBehaviour {
 
     //Internal vars to work with 
     private float speedMod = 0.0f;                   //temp Var for Speedcalculation 
-    private bool grounded = false;                   //temp var if the character is grounded 
+    public bool grounded = false;                   //temp var if the character is grounded 
     private Vector3 moveDirection = Vector3.zero;    //move direction of the Character 
     private bool isWalking = false;                  //toggle var between move and run 
     private bool jumping = false;                    //temp var for jumping 
@@ -36,18 +41,18 @@ public class WowMovement : NetworkBehaviour {
         if (isLocalPlayer == true)
         {
             playerCamera.GetComponent<Camera>().enabled = true;
-            //animator = this.gameObject.GetComponent<Animator>();
         }
         else
         {
             playerCamera.GetComponent<Camera>().enabled = false;
-            //animator = this.gameObject.GetComponent<Animator>();
         }
     }
 
     //Every Frame 
     void Update()
     {
+        CheckForPlayerInput();
+
         if(isLocalPlayer == true)
         {
             //Set idle animation 
@@ -199,4 +204,31 @@ public class WowMovement : NetworkBehaviour {
                 moveStatus = "swimup";
         }
     }
+
+    void CheckForPlayerInput()
+    {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
+        InputY = Input.GetAxis("Vertical");
+        InputX = Input.GetAxis("Horizontal");
+        animator.SetFloat("X", InputX);
+        animator.SetFloat("Y", InputY);
+
+        
+        if (grounded)
+        {
+            if (Input.GetButton("Jump"))
+            {
+                animator.SetBool("In Air", true);
+            }
+            else
+            {
+                animator.SetBool("In Air", false);
+            }
+        }
+    }
+
 }
