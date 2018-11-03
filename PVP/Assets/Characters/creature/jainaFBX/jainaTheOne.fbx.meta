@@ -431,7 +431,22 @@ ModelImporter:
     9500000: //RootNode
     13700000: creature/jaina3/jaina3
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jaina3_body
+    second: {fileID: 2800000, guid: 2dc9ffabae58ff840bd1556462d3cd65, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jaina3_hooddown
+    second: {fileID: 2800000, guid: d864a3d2c78f91d4e8589de527c3d650, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: jaina3_pendant
+    second: {fileID: 2800000, guid: ed3766755a00a1d4ca4048170de83c20, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
