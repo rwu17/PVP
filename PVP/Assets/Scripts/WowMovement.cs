@@ -14,6 +14,7 @@ public class WowMovement : NetworkBehaviour {
     public float InputY;
     public string strafeStatus = "no";
     public GameObject Prefab;
+    public float prefabDirection;
 
     //Var definition 
     public bool swimming = false;                    //Can be triggered to slow down the movements (like when u swim) 
@@ -241,14 +242,13 @@ public class WowMovement : NetworkBehaviour {
             }
 
             //Strafing animation
-            if (Input.GetAxisRaw("Strafing") < 0 || (Input.GetMouseButton(1) && Input.GetAxisRaw("Horizontal") < 0)) //Right is negativ
+            prefabDirection = Prefab.transform.rotation.y;
+
+            if (Input.GetAxisRaw("Strafing") < 0 || (Input.GetMouseButton(1) && Input.GetAxisRaw("Horizontal") > 0)) //Right is positive
             {
                 animator.SetBool("Strafing", true);
                 strafeStatus = "E";
-                //Prefab.transform.rotation = Quaternion.Euler(0, 180, 0);
-                //Prefab.transform.rotation = Quaternion.Euler(0, -90, 0);
-
-                //transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
+                Prefab.transform.rotation = Quaternion.Euler(0, (prefabDirection + 90), 0);
 
                 //Right + Forward
                 if ((Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") > 0) || (Input.GetMouseButton(0) && Input.GetMouseButton(1) || mouseSideButton)) 
@@ -260,14 +260,16 @@ public class WowMovement : NetworkBehaviour {
                 if(Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") < 0) //Right + Backward
                 {
                     strafeStatus = "E + S";
-                    //Prefab.transform.rotation = Quaternion.Euler(0, 135, 0);
+                    animator.SetBool("Strafing", false);
+                    animator.SetBool("backStrafing", true);
+                    //Prefab.transform.rotation = Quaternion.Euler(0, 45, 0);
                 }
             }
-            else if (Input.GetAxisRaw("Strafing") > 0 || (Input.GetMouseButton(1) && Input.GetAxisRaw("Horizontal") > 0)) //Left is positive
+            else if (Input.GetAxisRaw("Strafing") > 0 || (Input.GetMouseButton(1) && Input.GetAxisRaw("Horizontal") < 0)) //Left is negative
             {
                 animator.SetBool("Strafing", true);
                 strafeStatus = "Q";
-                //Prefab.transform.rotation = Quaternion.Euler(0, 0, 0);
+                Prefab.transform.rotation = Quaternion.Euler(0, (prefabDirection - 90), 0);
 
                 //Left + Forward
                 if ((Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") > 0) || (Input.GetMouseButton(0) && Input.GetMouseButton(1) || mouseSideButton)) 
@@ -279,15 +281,17 @@ public class WowMovement : NetworkBehaviour {
                 if (Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") < 0) //Left + Backward
                 {
                     strafeStatus = "Q + S";
-                    //Prefab.transform.rotation = Quaternion.Euler(0, 45, 0);
+                    animator.SetBool("Strafing", false);
+                    animator.SetBool("backStrafing", true);
+                    //Prefab.transform.rotation = Quaternion.Euler(0, 135, 0);
                 }
             }
             else
             {
                 animator.SetBool("Strafing", false);
+                animator.SetBool("backStrafing", false);
                 strafeStatus = "no";
-                //Prefab.transform.rotation = Quaternion.Euler(0, 90, 0);
-                //Prefab.transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
+                Prefab.transform.rotation = Quaternion.Euler(0, prefabDirection, 0);
             }
         }
     }

@@ -5868,7 +5868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 95981490614391714}
-  m_ParameterSendBits: 31
+  m_ParameterSendBits: 63
   param0: 
   param1: 
   param2: 
@@ -5918,6 +5918,8 @@ MonoBehaviour:
   animator: {fileID: 95981490614391714}
   InputY: 0
   strafeStatus: no
+  Prefab: {fileID: 1913563413317830}
+  prefabDirection: 0
   swimming: 0
   moveStatus: idle
   jumpSpeed: 8
