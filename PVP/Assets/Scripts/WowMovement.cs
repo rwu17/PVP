@@ -13,6 +13,7 @@ public class WowMovement : NetworkBehaviour {
     float InputX;
     public float InputY;
     public string strafeStatus = "no";
+    public GameObject Prefab;
 
     //Var definition 
     public bool swimming = false;                    //Can be triggered to slow down the movements (like when u swim) 
@@ -249,7 +250,8 @@ public class WowMovement : NetworkBehaviour {
 
                 //transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
 
-                if (Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") > 0) //Right + Forward
+                //Right + Forward
+                if ((Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") > 0) || (Input.GetMouseButton(0) && Input.GetMouseButton(1) || mouseSideButton)) 
                 {
                     strafeStatus = "E + W";
                     //Prefab.transform.rotation = Quaternion.Euler(0, 135, 0);
@@ -267,7 +269,8 @@ public class WowMovement : NetworkBehaviour {
                 strafeStatus = "Q";
                 //Prefab.transform.rotation = Quaternion.Euler(0, 0, 0);
 
-                if (Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") > 0) //Left + Forward
+                //Left + Forward
+                if ((Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") > 0) || (Input.GetMouseButton(0) && Input.GetMouseButton(1) || mouseSideButton)) 
                 {
                     strafeStatus = "Q + W";
                     //Prefab.transform.rotation = Quaternion.Euler(0, 45, 0);
