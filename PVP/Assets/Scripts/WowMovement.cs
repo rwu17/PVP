@@ -248,7 +248,7 @@ public class WowMovement : NetworkBehaviour {
             {
                 animator.SetBool("Strafing", true);
                 strafeStatus = "E";
-                Prefab.transform.rotation = Quaternion.Euler(0, (prefabDirection + 90), 0);
+                //Prefab.transform.rotation = Quaternion.Euler(0, (prefabDirection + 90), 0);
 
                 //Right + Forward
                 if ((Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") > 0) || (Input.GetMouseButton(0) && Input.GetMouseButton(1) || mouseSideButton)) 
@@ -269,7 +269,7 @@ public class WowMovement : NetworkBehaviour {
             {
                 animator.SetBool("Strafing", true);
                 strafeStatus = "Q";
-                Prefab.transform.rotation = Quaternion.Euler(0, (prefabDirection - 90), 0);
+                //Prefab.transform.rotation = Quaternion.Euler(0, (prefabDirection - 90), 0);
 
                 //Left + Forward
                 if ((Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") > 0) || (Input.GetMouseButton(0) && Input.GetMouseButton(1) || mouseSideButton)) 
@@ -291,7 +291,7 @@ public class WowMovement : NetworkBehaviour {
                 animator.SetBool("Strafing", false);
                 animator.SetBool("backStrafing", false);
                 strafeStatus = "no";
-                Prefab.transform.rotation = Quaternion.Euler(0, prefabDirection, 0);
+                //Prefab.transform.rotation = Quaternion.Euler(0, prefabDirection, 0);
             }
         }
     }
