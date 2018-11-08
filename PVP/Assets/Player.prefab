@@ -5918,15 +5918,16 @@ MonoBehaviour:
   animator: {fileID: 95981490614391714}
   InputY: 0
   strafeStatus: no
-  Prefab: {fileID: 1913563413317830}
-  prefabDirection: 0
+  Player: {fileID: 1913563413317830}
+  Model: {fileID: 1741012666218624}
+  modelDirection: 0
   swimming: 0
   moveStatus: idle
   jumpSpeed: 8
   gravity: 22
   runSpeed: 6
   walkSpeed: 6
-  rotateSpeed: 100
+  rotateSpeed: 135
   walkBackMod: 0.75
   grounded: 0
 --- !u!114 &114739587391893136

@@ -13,8 +13,9 @@ public class WowMovement : NetworkBehaviour {
     float InputX;
     public float InputY;
     public string strafeStatus = "no";
-    public GameObject Prefab;
-    public float prefabDirection;
+    public GameObject Player;
+    public GameObject Model;
+    public float modelDirection;
 
     //Var definition 
     public bool swimming = false;                    //Can be triggered to slow down the movements (like when u swim) 
@@ -242,58 +243,70 @@ public class WowMovement : NetworkBehaviour {
             }
 
             //Strafing animation
-            prefabDirection = Prefab.transform.rotation.y;
+            modelDirection = Player.transform.rotation.eulerAngles.y + 90; // + 90 because when model is inserted to the scene, it needs to turn
 
             if (Input.GetAxisRaw("Strafing") < 0 || (Input.GetMouseButton(1) && Input.GetAxisRaw("Horizontal") > 0)) //Right is positive
             {
-                animator.SetBool("Strafing", true);
+                animator.SetFloat("S", 0);
                 strafeStatus = "E";
-                //Prefab.transform.rotation = Quaternion.Euler(0, (prefabDirection + 90), 0);
+                animator.SetBool("Strafing", true);
+                animator.SetBool("backStrafing", false);
+                Model.transform.rotation = Quaternion.Euler(0, modelDirection + 90, 0);
 
                 //Right + Forward
                 if ((Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") > 0) || (Input.GetMouseButton(0) && Input.GetMouseButton(1) || mouseSideButton)) 
                 {
+                    animator.SetFloat("S", 0);
                     strafeStatus = "E + W";
-                    //Prefab.transform.rotation = Quaternion.Euler(0, 135, 0);
+                    animator.SetBool("Strafing", true);
+                    animator.SetBool("backStrafing", false);
+                    Model.transform.rotation = Quaternion.Euler(0, modelDirection + 30, 0);
                 }
 
                 if(Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") < 0) //Right + Backward
                 {
+                    animator.SetFloat("S", 0);
                     strafeStatus = "E + S";
                     animator.SetBool("Strafing", false);
                     animator.SetBool("backStrafing", true);
-                    //Prefab.transform.rotation = Quaternion.Euler(0, 45, 0);
+                    Model.transform.rotation = Quaternion.Euler(0, modelDirection - 45, 0);
                 }
             }
             else if (Input.GetAxisRaw("Strafing") > 0 || (Input.GetMouseButton(1) && Input.GetAxisRaw("Horizontal") < 0)) //Left is negative
             {
-                animator.SetBool("Strafing", true);
+                animator.SetFloat("S", 0);
                 strafeStatus = "Q";
-                //Prefab.transform.rotation = Quaternion.Euler(0, (prefabDirection - 90), 0);
+                animator.SetBool("Strafing", true);
+                animator.SetBool("backStrafing", false);
+                Model.transform.rotation = Quaternion.Euler(0, modelDirection - 90, 0);
 
                 //Left + Forward
                 if ((Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") > 0) || (Input.GetMouseButton(0) && Input.GetMouseButton(1) || mouseSideButton)) 
                 {
+                    animator.SetFloat("S", 0);
                     strafeStatus = "Q + W";
-                    //Prefab.transform.rotation = Quaternion.Euler(0, 45, 0);
+                    animator.SetBool("Strafing", true);
+                    animator.SetBool("backStrafing", false);
+                    Model.transform.rotation = Quaternion.Euler(0, modelDirection - 30, 0);
                 }
 
                 if (Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") < 0) //Left + Backward
                 {
+                    animator.SetFloat("S", 0);
                     strafeStatus = "Q + S";
                     animator.SetBool("Strafing", false);
                     animator.SetBool("backStrafing", true);
-                    //Prefab.transform.rotation = Quaternion.Euler(0, 135, 0);
+                    Model.transform.rotation = Quaternion.Euler(0, modelDirection + 45, 0);
                 }
             }
             else
             {
+                animator.SetFloat("S", 1);
                 animator.SetBool("Strafing", false);
                 animator.SetBool("backStrafing", false);
                 strafeStatus = "no";
-                //Prefab.transform.rotation = Quaternion.Euler(0, prefabDirection, 0);
+                Model.transform.rotation = Quaternion.Euler(0, modelDirection, 0);
             }
         }
     }
-
 }
