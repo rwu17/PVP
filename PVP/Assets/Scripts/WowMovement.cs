@@ -249,7 +249,6 @@ public class WowMovement : NetworkBehaviour {
             {
                 animator.SetFloat("S", 0);
                 strafeStatus = "E";
-                animator.SetBool("Strafing", true);
                 animator.SetBool("backStrafing", false);
                 Model.transform.rotation = Quaternion.Euler(0, modelDirection + 90, 0);
 
@@ -258,7 +257,6 @@ public class WowMovement : NetworkBehaviour {
                 {
                     animator.SetFloat("S", 0);
                     strafeStatus = "E + W";
-                    animator.SetBool("Strafing", true);
                     animator.SetBool("backStrafing", false);
                     Model.transform.rotation = Quaternion.Euler(0, modelDirection + 30, 0);
                 }
@@ -267,7 +265,6 @@ public class WowMovement : NetworkBehaviour {
                 {
                     animator.SetFloat("S", 0);
                     strafeStatus = "E + S";
-                    animator.SetBool("Strafing", false);
                     animator.SetBool("backStrafing", true);
                     Model.transform.rotation = Quaternion.Euler(0, modelDirection - 45, 0);
                 }
@@ -276,7 +273,6 @@ public class WowMovement : NetworkBehaviour {
             {
                 animator.SetFloat("S", 0);
                 strafeStatus = "Q";
-                animator.SetBool("Strafing", true);
                 animator.SetBool("backStrafing", false);
                 Model.transform.rotation = Quaternion.Euler(0, modelDirection - 90, 0);
 
@@ -285,7 +281,6 @@ public class WowMovement : NetworkBehaviour {
                 {
                     animator.SetFloat("S", 0);
                     strafeStatus = "Q + W";
-                    animator.SetBool("Strafing", true);
                     animator.SetBool("backStrafing", false);
                     Model.transform.rotation = Quaternion.Euler(0, modelDirection - 30, 0);
                 }
@@ -294,7 +289,6 @@ public class WowMovement : NetworkBehaviour {
                 {
                     animator.SetFloat("S", 0);
                     strafeStatus = "Q + S";
-                    animator.SetBool("Strafing", false);
                     animator.SetBool("backStrafing", true);
                     Model.transform.rotation = Quaternion.Euler(0, modelDirection + 45, 0);
                 }
@@ -302,7 +296,6 @@ public class WowMovement : NetworkBehaviour {
             else
             {
                 animator.SetFloat("S", 1);
-                animator.SetBool("Strafing", false);
                 animator.SetBool("backStrafing", false);
                 strafeStatus = "no";
                 Model.transform.rotation = Quaternion.Euler(0, modelDirection, 0);
