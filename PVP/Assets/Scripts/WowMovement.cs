@@ -250,7 +250,7 @@ public class WowMovement : NetworkBehaviour {
                 animator.SetFloat("S", 0);
                 strafeStatus = "E";
                 animator.SetBool("backStrafing", false);
-                Model.transform.rotation = Quaternion.Euler(0, modelDirection + 90, 0);
+                Model.transform.rotation = Quaternion.Euler(0, modelDirection + 75, 0);
 
                 //Right + Forward
                 if ((Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") > 0) || (Input.GetMouseButton(0) && Input.GetMouseButton(1) || mouseSideButton)) 
@@ -258,7 +258,7 @@ public class WowMovement : NetworkBehaviour {
                     animator.SetFloat("S", 0);
                     strafeStatus = "E + W";
                     animator.SetBool("backStrafing", false);
-                    Model.transform.rotation = Quaternion.Euler(0, modelDirection + 30, 0);
+                    Model.transform.rotation = Quaternion.Euler(0, modelDirection + 25, 0);
                 }
 
                 if(Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") < 0) //Right + Backward
@@ -274,7 +274,7 @@ public class WowMovement : NetworkBehaviour {
                 animator.SetFloat("S", 0);
                 strafeStatus = "Q";
                 animator.SetBool("backStrafing", false);
-                Model.transform.rotation = Quaternion.Euler(0, modelDirection - 90, 0);
+                Model.transform.rotation = Quaternion.Euler(0, modelDirection - 75, 0);
 
                 //Left + Forward
                 if ((Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") > 0) || (Input.GetMouseButton(0) && Input.GetMouseButton(1) || mouseSideButton)) 
@@ -282,7 +282,7 @@ public class WowMovement : NetworkBehaviour {
                     animator.SetFloat("S", 0);
                     strafeStatus = "Q + W";
                     animator.SetBool("backStrafing", false);
-                    Model.transform.rotation = Quaternion.Euler(0, modelDirection - 30, 0);
+                    Model.transform.rotation = Quaternion.Euler(0, modelDirection - 25, 0);
                 }
 
                 if (Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") < 0) //Left + Backward

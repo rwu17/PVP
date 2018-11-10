@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class NetworkManager_Custom : NetworkManager {
 
-	public void StartupHost()
+    public void StartupHost()
     {
         SetPort();
         NetworkManager.singleton.StartHost();
@@ -22,7 +22,7 @@ public class NetworkManager_Custom : NetworkManager {
 
     void SetIPAddress()
     {
-        string ipAddress = GameObject.Find("InputFieldIPAddress").transform.Find("Text").GetComponent<Text>().text;
+        string ipAddress = GameObject.Find("InputFieldIPAdress").transform.Find("Text").GetComponent<Text>().text;
         NetworkManager.singleton.networkAddress = ipAddress;
     }
 
@@ -31,11 +31,12 @@ public class NetworkManager_Custom : NetworkManager {
         NetworkManager.singleton.networkPort = 7777;
     }
 
-    private void OnLevelWasLoaded(int level)
+    void OnLevelWasLoaded(int level)
     {
         if(level == 0)
         {
-            SetupMenuSceneButton();
+            StartCoroutine(SetupMenuSceneButton());
+            //SetupMenuSceneButton();
         }
         else
         {
@@ -43,13 +44,17 @@ public class NetworkManager_Custom : NetworkManager {
         }
     }
 
-    void SetupMenuSceneButton()
+    IEnumerator SetupMenuSceneButton()
     {
-        GameObject.Find("HostButton").GetComponent<Button>().onClick.RemoveAllListeners();
-        GameObject.Find("HostButton").GetComponent<Button>().onClick.AddListener(StartupHost);
+        yield return new WaitForSeconds(0.3f);
 
-        GameObject.Find("JoinButton").GetComponent<Button>().onClick.RemoveAllListeners();
-        GameObject.Find("JoinButton").GetComponent<Button>().onClick.AddListener(JoinGame);
+        Cursor.visible = true;
+
+        GameObject.Find("HostStartButton").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("HostStartButton").GetComponent<Button>().onClick.AddListener(StartupHost);
+
+        GameObject.Find("JoinStartButton").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("JoinStartButton").GetComponent<Button>().onClick.AddListener(JoinGame);
     }
 
     void SetupOtherSceneButton()
