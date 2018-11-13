@@ -2,11 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class WowMovement : NetworkBehaviour {
 
     //For network purpose
     public GameObject playerCamera;
+
+    //Stats
+    private Stat exp;
+
+    [SerializeField]
+    private Stat health;
+
+    [SerializeField]
+    private Stat mana;
+
+    [SerializeField]
+    private Stat rage;
+
+    [SerializeField]
+    private Stat energy;
+
+    [SerializeField]
+    private Stat focus;
+
+    private float maxHealth = 100;
+    private float maxMana = 100;
+
 
     //Animations
     public Animator animator;
@@ -40,11 +63,21 @@ public class WowMovement : NetworkBehaviour {
     private float coolDown = 0.5f;                   //Cooldowntime for SideButtons 
     private CharacterController controller;          //CharacterController for movement 
 
-    private void Start()
+    void Start()
     {
         if (isLocalPlayer == true)
         {
             playerCamera.GetComponent<Camera>().enabled = true;
+      
+            health = GameObject.Find("PlayerHP").GetComponent<Stat>();
+            mana = GameObject.Find("PlayerMana").GetComponent<Stat>();  //enabled if mana class is chosen, works on rage, energy and focus too.
+            /*
+            rage.GetComponent<Stat>();
+            energy.GetComponent<Stat>();
+            focus.GetComponent<Stat>();
+            */
+            health.Initialize(maxHealth, maxHealth);
+            mana.Initialize(maxMana, maxMana);
         }
         else
         {
@@ -59,6 +92,21 @@ public class WowMovement : NetworkBehaviour {
 
         if(isLocalPlayer == true)
         {
+            //Debug
+
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                health.MyCurrentValue -= 10;
+                mana.MyCurrentValue -= 10;
+            }
+
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                health.MyCurrentValue += 10;
+                mana.MyCurrentValue += 10;
+            }
+            //Debug
+
             //Set idle animation 
             moveStatus = "idle";
             isWalking = true;

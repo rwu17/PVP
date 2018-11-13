@@ -5916,6 +5916,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1212886365617546}
+  health: {fileID: 0}
+  mana: {fileID: 0}
+  rage: {fileID: 0}
+  energy: {fileID: 0}
+  focus: {fileID: 0}
   animator: {fileID: 95981490614391714}
   InputY: 0
   strafeStatus: no
