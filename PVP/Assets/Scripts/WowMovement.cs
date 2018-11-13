@@ -27,10 +27,6 @@ public class WowMovement : NetworkBehaviour {
     [SerializeField]
     private Stat focus;
 
-    private float maxHealth = 100;
-    private float maxMana = 100;
-
-
     //Animations
     public Animator animator;
     float InputX;
@@ -68,16 +64,17 @@ public class WowMovement : NetworkBehaviour {
         if (isLocalPlayer == true)
         {
             playerCamera.GetComponent<Camera>().enabled = true;
-      
+            /*
             health = GameObject.Find("PlayerHP").GetComponent<Stat>();
             mana = GameObject.Find("PlayerMana").GetComponent<Stat>();  //enabled if mana class is chosen, works on rage, energy and focus too.
-            /*
+            
             rage.GetComponent<Stat>();
             energy.GetComponent<Stat>();
             focus.GetComponent<Stat>();
             */
-            health.Initialize(maxHealth, maxHealth);
-            mana.Initialize(maxMana, maxMana);
+            health.maxValue = 100;
+            mana.maxValue = 100;
+
         }
         else
         {
@@ -93,17 +90,16 @@ public class WowMovement : NetworkBehaviour {
         if(isLocalPlayer == true)
         {
             //Debug
-
             if (Input.GetKeyDown(KeyCode.I))
             {
-                health.MyCurrentValue -= 10;
-                mana.MyCurrentValue -= 10;
+                health.currentValue -= 10;
+                mana.currentValue -= 10;
             }
 
             if (Input.GetKeyDown(KeyCode.O))
             {
-                health.MyCurrentValue += 10;
-                mana.MyCurrentValue += 10;
+                health.currentValue += 10;
+                mana.currentValue += 10;
             }
             //Debug
 

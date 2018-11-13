@@ -6,16 +6,19 @@ using UnityEngine.Networking;
 
 public class Stat : NetworkBehaviour {
 
-    private Image content = GetComponent<Image>();
-
+    [SerializeField]
     private float lerpSpeed = 0.5f;
 
-    private float currentFill;
+    public float currentFill;
 
-    public float MyMaxValue { get; set; }
+    public float maxValue;
 
-    [SyncVar (hook = "OnChangeValue")] private float currentValue;
+    [SyncVar(hook = "UpdateValue")]
+    public float currentValue;
 
+    public Image content;
+    
+    /*
     public float MyCurrentValue
     {
         get
@@ -42,18 +45,47 @@ public class Stat : NetworkBehaviour {
             currentFill = currentValue / MyMaxValue;
         }
     }
+    */
 
-    void OnChangeValue()
+    void OnChangeValue(float amount)
     {
-        if (currentFill != content.fillAmount)
+        if (!isServer)
         {
-            content.fillAmount = Mathf.Lerp(content.fillAmount, currentFill, Time.deltaTime * lerpSpeed);
+            return;
+        }
+
+        currentValue -= amount;
+
+        if(currentValue > maxValue)
+        {
+            currentValue = maxValue;
+        }
+        else if(currentValue <= 0)
+        {
+            currentValue = 0;
+            Debug.Log("some value at 0!");
         }
     }
 
-    public void Initialize(float currentValue, float maxValue)
+    void UpdateValue(float value)
     {
-        MyMaxValue = maxValue;
-        MyCurrentValue = currentValue;
+
+        if (value > maxValue)
+        {
+            value = maxValue;
+        }
+        else if (value <= 0)
+        {
+            value = 0;
+            Debug.Log("some value at 0!");
+        }
+
+        currentFill = value / maxValue;
+
+        if (currentFill != content.fillAmount)
+        {
+            content.fillAmount = currentFill;
+            //content.fillAmount = Mathf.Lerp(content.fillAmount, currentFill, Time.deltaTime * lerpSpeed);
+        }
     }
 }
