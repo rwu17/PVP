@@ -6,16 +6,15 @@ using UnityEngine.Networking;
 
 public class Stat : NetworkBehaviour {
 
-    private Image content;
+    private Image content = GetComponent<Image>();
 
-    [SerializeField]
-    private float lerpSpeed;
+    private float lerpSpeed = 0.5f;
 
     private float currentFill;
 
     public float MyMaxValue { get; set; }
 
-    private float currentValue;
+    [SyncVar (hook = "OnChangeValue")] private float currentValue;
 
     public float MyCurrentValue
     {
@@ -44,22 +43,11 @@ public class Stat : NetworkBehaviour {
         }
     }
 
-    // Use this for initialization
-    void Start () {
-        if(isLocalPlayer == true)
+    void OnChangeValue()
+    {
+        if (currentFill != content.fillAmount)
         {
-            content = GetComponent<Image>();
-        }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (isLocalPlayer == true)
-        {
-            if (currentFill != content.fillAmount)
-            {
-                content.fillAmount = Mathf.Lerp(content.fillAmount, currentFill, Time.deltaTime * lerpSpeed);
-            }
+            content.fillAmount = Mathf.Lerp(content.fillAmount, currentFill, Time.deltaTime * lerpSpeed);
         }
     }
 
