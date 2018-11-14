@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class WowMovement : NetworkBehaviour {
+public class Player : NetworkBehaviour {
 
     //For network purpose
     public GameObject playerCamera;
@@ -46,10 +46,10 @@ public class WowMovement : NetworkBehaviour {
     public Animator animator;
     float InputX;
     public float InputY;
-    public string strafeStatus = "no";
+    private string strafeStatus = "no";
     public GameObject Player;
     public GameObject Model;
-    public float modelDirection;
+    private float modelDirection;
 
     //Var definition 
     public bool swimming = false;                    //Can be triggered to slow down the movements (like when u swim) 
@@ -103,18 +103,6 @@ public class WowMovement : NetworkBehaviour {
 
         if(isLocalPlayer == true)
         {
-            //Debug
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                GetComponent<Player_Health>().OnChangeValue(10);
-            }
-
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                GetComponent<Player_Health>().OnChangeValue(-10);
-            }
-            //Debug
-
             //Set idle animation 
             moveStatus = "idle";
             isWalking = true;

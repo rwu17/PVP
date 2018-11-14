@@ -5,20 +5,18 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class Player_Health : NetworkBehaviour {
-    //[SerializeField]
-    //private float lerpSpeed = 0.5f;
-
     public float currentFill;
 
     public float maxValue = 100;
 
     [SyncVar(hook = "UpdateValue")]public float currentValue;
 
-    public Image content;
+    private Image content;
 
-    void Start()
+    public override void OnStartLocalPlayer()
     {
         content = GameObject.Find("PlayerHP").GetComponent<Image>();
+        currentValue = maxValue;
         SetValue();
     }
 
@@ -26,7 +24,6 @@ public class Player_Health : NetworkBehaviour {
     {
         if (isLocalPlayer)
         {
-            currentValue = maxValue;
             currentFill = currentValue / maxValue;
             content.fillAmount = currentFill;
         }
@@ -34,11 +31,6 @@ public class Player_Health : NetworkBehaviour {
 
     public void OnChangeValue(float amount)
     {
-        if (!isServer)
-        {
-            return;
-        }
-
         currentValue -= amount;
 
         if (currentValue > maxValue)
@@ -55,11 +47,6 @@ public class Player_Health : NetworkBehaviour {
     void UpdateValue(float value)
     {
         currentValue = value;
-        currentFill = value / maxValue;
-
-        if (currentFill != content.fillAmount)
-        {
-            content.fillAmount = currentFill;
-        }
+        SetValue();
     }
 }

@@ -2700,6 +2700,8 @@ GameObject:
   - component: {fileID: 95981490614391714}
   - component: {fileID: 114170263723099464}
   - component: {fileID: 114215452801920174}
+  - component: {fileID: 114661597185421564}
+  - component: {fileID: 114463267824844674}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -5890,8 +5892,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFill: 0
   maxValue: 100
-  currentValue: 0
-  content: {fileID: 0}
 --- !u!114 &114401257762724548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5920,6 +5920,28 @@ MonoBehaviour:
   collisionLayers:
     serializedVersion: 2
     m_Bits: 567
+--- !u!114 &114463267824844674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913563413317830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f4f29dc3297f640ae3531b8d341262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114661597185421564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913563413317830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f8b0356f42bd34ead061d1904dedef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114693680048782334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5934,10 +5956,8 @@ MonoBehaviour:
   playerCamera: {fileID: 1212886365617546}
   animator: {fileID: 95981490614391714}
   InputY: 0
-  strafeStatus: no
   Player: {fileID: 1913563413317830}
   Model: {fileID: 1741012666218624}
-  modelDirection: 0
   swimming: 0
   moveStatus: idle
   jumpSpeed: 8
