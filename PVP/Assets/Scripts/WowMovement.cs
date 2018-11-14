@@ -9,9 +9,23 @@ public class WowMovement : NetworkBehaviour {
     //For network purpose
     public GameObject playerCamera;
 
-    //Stats
-    private Stat exp;
+    //Stats   
+    /*
+    public Stat exp;
 
+    public Stat health;
+    
+    public Stat mana;
+    
+    public Stat rage;
+    
+    public Stat energy;
+    
+    public Stat focus;
+    
+    [SerializeField]
+    private Stat exp;
+    
     [SerializeField]
     private Stat health;
 
@@ -26,6 +40,7 @@ public class WowMovement : NetworkBehaviour {
 
     [SerializeField]
     private Stat focus;
+    */
 
     //Animations
     public Animator animator;
@@ -71,10 +86,9 @@ public class WowMovement : NetworkBehaviour {
             rage.GetComponent<Stat>();
             energy.GetComponent<Stat>();
             focus.GetComponent<Stat>();
-            */
+            
             health.maxValue = 100;
-            mana.maxValue = 100;
-
+            mana.maxValue = 100;*/
         }
         else
         {
@@ -92,14 +106,12 @@ public class WowMovement : NetworkBehaviour {
             //Debug
             if (Input.GetKeyDown(KeyCode.I))
             {
-                health.currentValue -= 10;
-                mana.currentValue -= 10;
+                GetComponent<Player_Health>().OnChangeValue(10);
             }
 
             if (Input.GetKeyDown(KeyCode.O))
             {
-                health.currentValue += 10;
-                mana.currentValue += 10;
+                GetComponent<Player_Health>().OnChangeValue(-10);
             }
             //Debug
 
