@@ -11,13 +11,31 @@ public class Player_Health : NetworkBehaviour {
 
     [SyncVar(hook = "UpdateValue")]public float currentValue;
 
-    private Image content;
+    public Image content;
+
+    public Player_ID player;
 
     public override void OnStartLocalPlayer()
     {
         content = GameObject.Find("PlayerHP").GetComponent<Image>();
         currentValue = maxValue;
         SetValue();
+    }
+
+    void Update()
+    {
+        if (isLocalPlayer)
+        {
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                OnChangeValue(10);
+                SetValue();
+            } else if (Input.GetKeyDown(KeyCode.O))
+            {
+                OnChangeValue(-10);
+                SetValue();
+            }
+        }
     }
 
     void SetValue()

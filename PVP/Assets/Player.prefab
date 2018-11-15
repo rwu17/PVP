@@ -5892,6 +5892,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFill: 0
   maxValue: 100
+  currentValue: 0
+  player: {fileID: 0}
 --- !u!114 &114401257762724548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5956,7 +5958,7 @@ MonoBehaviour:
   playerCamera: {fileID: 1212886365617546}
   animator: {fileID: 95981490614391714}
   InputY: 0
-  Player: {fileID: 1913563413317830}
+  player: {fileID: 1913563413317830}
   Model: {fileID: 1741012666218624}
   swimming: 0
   moveStatus: idle

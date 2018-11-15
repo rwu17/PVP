@@ -11,18 +11,6 @@ public class Player : NetworkBehaviour {
 
     //Stats   
     /*
-    public Stat exp;
-
-    public Stat health;
-    
-    public Stat mana;
-    
-    public Stat rage;
-    
-    public Stat energy;
-    
-    public Stat focus;
-    
     [SerializeField]
     private Stat exp;
     
@@ -47,7 +35,7 @@ public class Player : NetworkBehaviour {
     float InputX;
     public float InputY;
     private string strafeStatus = "no";
-    public GameObject Player;
+    public GameObject player;
     public GameObject Model;
     private float modelDirection;
 
@@ -131,7 +119,7 @@ public class Player : NetworkBehaviour {
                 }
                 if (mouseSideButton && ((Input.GetAxis("Vertical") != 0) || Input.GetButton("Jump")) || (Input.GetMouseButton(0) && Input.GetMouseButton(1)))
                 {
-                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.lockState = CursorLockMode.Confined;
                     Cursor.visible = false;
                     mouseSideButton = false;
                 }
@@ -144,7 +132,7 @@ public class Player : NetworkBehaviour {
                 //L+R MouseButton Movement 
                 if (Input.GetMouseButton(0) && Input.GetMouseButton(1) || mouseSideButton)
                 {
-                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.lockState = CursorLockMode.Confined;
                     Cursor.visible = false;
                     moveDirection.z += 1;
                 }
@@ -162,7 +150,7 @@ public class Player : NetworkBehaviour {
                 // if moving forward and to the side at the same time, compensate for distance 
                 if (Input.GetMouseButton(1) && (Input.GetAxis("Horizontal") != 0) && (Input.GetAxis("Vertical") != 0))
                 {
-                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.lockState = CursorLockMode.Confined;
                     Cursor.visible = false;
                     moveDirection *= 0.7f;
                 }
@@ -223,7 +211,7 @@ public class Player : NetworkBehaviour {
             // Allow turning at anytime. Keep the character facing in the same direction as the Camera if the right mouse button is down. 
             if (Input.GetMouseButton(1))
             {
-                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = false;
                 transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
             }
@@ -287,7 +275,7 @@ public class Player : NetworkBehaviour {
             }
 
             //Strafing animation
-            modelDirection = Player.transform.rotation.eulerAngles.y + 90; // + 90 because when model is inserted to the scene, it needs to turn
+            modelDirection = player.transform.rotation.eulerAngles.y + 90; // + 90 because when model is inserted to the scene, it needs to turn
 
             if (Input.GetAxisRaw("Strafing") < 0 || (Input.GetMouseButton(1) && Input.GetAxisRaw("Horizontal") > 0)) //Right is positive
             {
