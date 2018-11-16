@@ -5,20 +5,18 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class Player_Health : NetworkBehaviour {
-    public float currentFill;
+    private float currentFill;
 
-    public float maxValue = 100;
+    private float maxValue = 100;
 
-    [SyncVar(hook = "UpdateValue")]public float currentValue;
+    [SyncVar(hook = "UpdateValue")]private float currentValue = 100;
 
-    public Image content;
-
-    public Player_ID player;
+    private Image content;
 
     public override void OnStartLocalPlayer()
     {
         content = GameObject.Find("PlayerHP").GetComponent<Image>();
-        currentValue = maxValue;
+        //currentValue = maxValue;
         SetValue();
     }
 
@@ -28,12 +26,10 @@ public class Player_Health : NetworkBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.I))
             {
-                OnChangeValue(10);
-                SetValue();
+                GetComponent<Player_Health>().OnChangeValue(10);
             } else if (Input.GetKeyDown(KeyCode.O))
             {
-                OnChangeValue(-10);
-                SetValue();
+                GetComponent<Player_Health>().OnChangeValue(-10);
             }
         }
     }
