@@ -6,48 +6,89 @@ using UnityEngine.Networking;
 
 public class Player_Damage : NetworkBehaviour {
 
-    private float damage;
+    public GameObject player;
 
-    private GameObject player;
+    public GameObject target;
 
+    public string playerName;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    void TakeDamage()
+    public override void OnStartLocalPlayer()
     {
-        if (!isLocalPlayer)
+        playerName = player.GetComponent<Player_ID>().playerUniqueName;
+    }
+
+    void Update () {
+        if (isLocalPlayer)
         {
-            return;
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            if(player.transform.tag == "Player")
+            if (Input.GetMouseButtonDown(0))
             {
-                string uIdentity = player.transform.name;
-                CmdTellServerWhoTookdmg(uIdentity, damage);
+                TargetSelect();
             }
 
-        } else if (Input.GetKeyDown(KeyCode.O))
-        {
-            if (player.transform.tag == "Player")
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
+                target = null;
+            }
 
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                if(target != null)
+                {
+                    CmdServerDamage(target, 10);
+                }
+                else
+                {
+                    print("You need to select a target!");
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.O))
+            {
+                if (target != null)
+                {
+                    CmdServerDamage(target, -10);
+                }
+                else
+                {
+                    print("You need to select a target!");
+                }
+            }
+        }
+	}
+
+    void TargetSelect()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 10000))
+        {
+            if (hit.transform.name == playerName)
+            {
+                print("You can't select yourself");
+                target = null;
+            }
+            else if (hit.transform.tag == "Player")
+            {
+                target = hit.transform.gameObject;
+            }
+            else
+            {
+                target = null;
             }
         }
     }
 
-    [Command]
-    private void CmdTellServerWhoTookdmg(string uniqueID, float damage)
+    public void SelectPlayer()
     {
-        GameObject go = GameObject.Find(uniqueID);
+        target = player;
+    }
 
+    [Command]
+    private void CmdServerDamage(GameObject damageTarget, float damage)
+    {
+        //GameObject selectedTarget = GameObject.Find(target);
+        //selectedTarget.GetComponent<Player_Health>().OnChangeValue(damage);
+        damageTarget.GetComponent<Player_Health>().OnChangeValue(damage);
     }
 }

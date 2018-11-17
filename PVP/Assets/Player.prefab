@@ -5890,10 +5890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9f84bffb7f3942a3c641199427858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentFill: 0
-  maxValue: 100
-  currentValue: 0
-  player: {fileID: 0}
+  currentValue: 100
 --- !u!114 &114401257762724548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5933,6 +5930,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f4f29dc3297f640ae3531b8d341262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1913563413317830}
+  target: {fileID: 0}
+  playerName: 
 --- !u!114 &114661597185421564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5944,6 +5944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8b0356f42bd34ead061d1904dedef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerUniqueName: 
 --- !u!114 &114693680048782334
 MonoBehaviour:
   m_ObjectHideFlags: 1

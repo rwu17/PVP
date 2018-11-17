@@ -9,27 +9,6 @@ public class Player : NetworkBehaviour {
     //For network purpose
     public GameObject playerCamera;
 
-    //Stats   
-    /*
-    [SerializeField]
-    private Stat exp;
-    
-    [SerializeField]
-    private Stat health;
-
-    [SerializeField]
-    private Stat mana;
-
-    [SerializeField]
-    private Stat rage;
-
-    [SerializeField]
-    private Stat energy;
-
-    [SerializeField]
-    private Stat focus;
-    */
-
     //Animations
     public Animator animator;
     float InputX;
@@ -67,16 +46,6 @@ public class Player : NetworkBehaviour {
         if (isLocalPlayer == true)
         {
             playerCamera.GetComponent<Camera>().enabled = true;
-            /*
-            health = GameObject.Find("PlayerHP").GetComponent<Stat>();
-            mana = GameObject.Find("PlayerMana").GetComponent<Stat>();  //enabled if mana class is chosen, works on rage, energy and focus too.
-            
-            rage.GetComponent<Stat>();
-            energy.GetComponent<Stat>();
-            focus.GetComponent<Stat>();
-            
-            health.maxValue = 100;
-            mana.maxValue = 100;*/
         }
         else
         {

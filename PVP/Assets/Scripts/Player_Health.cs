@@ -9,29 +9,15 @@ public class Player_Health : NetworkBehaviour {
 
     private float maxValue = 100;
 
-    [SyncVar(hook = "UpdateValue")]private float currentValue = 100;
+    [SyncVar(hook = "UpdateValue")]public float currentValue;
 
     private Image content;
 
     public override void OnStartLocalPlayer()
     {
         content = GameObject.Find("PlayerHP").GetComponent<Image>();
-        //currentValue = maxValue;
+        currentValue = maxValue;
         SetValue();
-    }
-
-    void Update()
-    {
-        if (isLocalPlayer)
-        {
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                GetComponent<Player_Health>().OnChangeValue(10);
-            } else if (Input.GetKeyDown(KeyCode.O))
-            {
-                GetComponent<Player_Health>().OnChangeValue(-10);
-            }
-        }
     }
 
     void SetValue()
@@ -54,7 +40,7 @@ public class Player_Health : NetworkBehaviour {
         else if (currentValue <= 0)
         {
             currentValue = 0;
-            Debug.Log("some value at 0!");
+            Debug.Log("Dead!");
         }
     }
 
