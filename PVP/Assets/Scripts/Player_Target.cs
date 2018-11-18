@@ -2,9 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 
-public class Player_Damage : NetworkBehaviour {
+public class Player_Target : NetworkBehaviour {
 
     public GameObject player;
 
@@ -12,14 +13,26 @@ public class Player_Damage : NetworkBehaviour {
 
     public string playerName;
 
+    public GameObject targetFrame;
+
     public override void OnStartLocalPlayer()
     {
         playerName = player.GetComponent<Player_ID>().playerUniqueName;
+        targetFrame = GameObject.Find("TargetFrame");
+        targetFrame.gameObject.SetActive(false);
     }
 
     void Update () {
         if (isLocalPlayer)
         {
+            if(target != null)
+            {
+                targetFrame.gameObject.SetActive(true);
+            } else
+            {
+                targetFrame.gameObject.SetActive(false);
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
                 TargetSelect();
