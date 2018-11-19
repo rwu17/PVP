@@ -5,19 +5,18 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class Player_Health : NetworkBehaviour {
-    private float currentFill;
+    public float currentFill;
 
-    public float maxValue = 100;
+    [SyncVar(hook = "UpdateValue")]private float currentValue = 100;
 
-    [SyncVar(hook = "UpdateValue")]public float currentValue;
+    private float maxValue = 100;
 
     private Image content;
 
     public override void OnStartLocalPlayer()
     {
         content = GameObject.Find("PlayerHP").GetComponent<Image>();
-        currentValue = maxValue;
-        SetValue();
+        UpdateValue(maxValue);
     }
 
     void SetValue()

@@ -2703,8 +2703,6 @@ GameObject:
   - component: {fileID: 114661597185421564}
   - component: {fileID: 114463267824844674}
   - component: {fileID: 114973827677834346}
-  - component: {fileID: 114702747066784170}
-  - component: {fileID: 114152633999955980}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -5863,19 +5861,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114152633999955980
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1913563413317830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da8b5b985185e64398eb8e9b243fe8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentValue: 0
-  selectedTarget: {fileID: 0}
 --- !u!114 &114170263723099464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5906,8 +5891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9f84bffb7f3942a3c641199427858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxValue: 100
-  currentValue: 100
+  currentFill: 0
 --- !u!114 &114401257762724548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5947,11 +5931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f4f29dc3297f640ae3531b8d341262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1913563413317830}
   target: {fileID: 0}
-  playerName: 
-  targetFrame: {fileID: 0}
-  targetName: {fileID: 0}
 --- !u!114 &114661597185421564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5964,7 +5944,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerUniqueName: 
-  playerName: {fileID: 0}
 --- !u!114 &114693680048782334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5990,22 +5969,6 @@ MonoBehaviour:
   rotateSpeed: 135
   walkBackMod: 0.75
   grounded: 0
---- !u!114 &114702747066784170
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1913563413317830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94f4f29dc3297f640ae3531b8d341262, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  target: {fileID: 0}
-  playerName: 
-  targetFrame: {fileID: 0}
-  targetName: {fileID: 0}
 --- !u!114 &114739587391893136
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -10,14 +10,14 @@ public class Player_ID : NetworkBehaviour {
     private NetworkInstanceId playerNetID;
     private Transform myTransform;
 
-    public Text playerName;
+    public string playerFrameName;
 
     public override void OnStartLocalPlayer()
     {
         GetNetIdentity();
         SetIdentity();
-        playerName = GameObject.Find("PlayerName").GetComponent<Text>();
-        playerName.text = playerUniqueName;
+        playerFrameName = GameObject.Find("PlayerName").GetComponent<Text>().text.ToString();
+        //GameObject.Find("PlayerName").GetComponent<Text>().text = playerUniqueName;
     }
 
     void Awake()

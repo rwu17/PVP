@@ -7,21 +7,25 @@ using UnityEngine.Networking;
 
 public class Player_Target : NetworkBehaviour {
 
-    public GameObject player;
-
     public GameObject target;
 
-    public string playerName;
-
-    public GameObject targetFrame;
+    private GameObject targetFrame;
 
     public Text targetName;
 
+    private string playerSelf;
+
+    private float targetHPFill = 0.5f;
+
+    public Image targetHP;
+
     public override void OnStartLocalPlayer()
     {
-        playerName = player.GetComponent<Player_ID>().playerUniqueName;
+        playerSelf = GetComponent<Player_ID>().playerUniqueName;
         targetFrame = GameObject.Find("TargetFrame");
-        targetFrame.SetActive(false);
+        targetHP = GameObject.Find("TargetHP").GetComponent<Image>();
+        targetHP.fillAmount = targetHPFill;
+        targetFrame.gameObject.SetActive(false);
     }
 
     void Update () {
@@ -29,12 +33,7 @@ public class Player_Target : NetworkBehaviour {
         {
             if(target != null)
             {
-                //targetFrame.SetActive(true);
-                targetName = GameObject.Find("TargetName").GetComponent<Text>();
-                targetName.text = target.GetComponent<Player_ID>().playerUniqueName;
-            } else
-            {
-                //targetFrame.SetActive(false);
+
             }
 
             if (Input.GetMouseButtonDown(0))
@@ -80,7 +79,7 @@ public class Player_Target : NetworkBehaviour {
 
         if (Physics.Raycast(ray, out hit, 10000))
         {
-            if (hit.transform.name == playerName)
+            if (hit.transform.name == playerSelf)
             {
                 print("You can't select yourself");
                 target = null;
@@ -88,17 +87,16 @@ public class Player_Target : NetworkBehaviour {
             else if (hit.transform.tag == "Player")
             {
                 target = hit.transform.gameObject;
+                targetFrame.gameObject.SetActive(true);
+                targetHP.gameObject.SetActive(true);
+                //targetHP.fillAmount = target.GetComponent<Player_Health>().currentFill;
             }
             else
             {
                 target = null;
+                targetFrame.gameObject.SetActive(false);
             }
         }
-    }
-
-    public void SelectPlayer()
-    {
-        target = player;
     }
 
     [Command]

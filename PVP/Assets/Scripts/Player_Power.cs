@@ -16,31 +16,43 @@ public class Player_Power : NetworkBehaviour
 
     private Image content;
 
+    private Image Mana;
+
+    private Image Rage;
+
+    private Image Energy;
+
+    private Image Focus;
+
     public override void OnStartLocalPlayer()
     {
-        GameObject.Find("PlayerMana").SetActive(false);
-        GameObject.Find("PlayerRage").SetActive(false);
-        GameObject.Find("PlayerEnergy").SetActive(false);
-        GameObject.Find("PlayerFocus").SetActive(false);
+        Mana = GameObject.Find("PlayerMana").GetComponent<Image>();
+        Rage = GameObject.Find("PlayerRage").GetComponent<Image>();
+        Energy = GameObject.Find("PlayerEnergy").GetComponent<Image>();
+        Focus = GameObject.Find("PlayerFocus").GetComponent<Image>();
+        Mana.gameObject.SetActive(false);
+        Rage.gameObject.SetActive(false);
+        Energy.gameObject.SetActive(false);
+        Focus.gameObject.SetActive(false);
 
         if (playerClass == "Mage")
         {
-            GameObject.Find("PlayerMana").SetActive(true);
+            Mana.gameObject.SetActive(true);
             content = GameObject.Find("PlayerMana").GetComponent<Image>();
         }
         else if(playerClass == "Warrior")
         {
-            GameObject.Find("PlayerRage").SetActive(true);
+            Rage.gameObject.SetActive(true);
             content = GameObject.Find("PlayerRage").GetComponent<Image>();
         }
         else if (playerClass == "Stalker")
         {
-            GameObject.Find("PlayerEnergy").SetActive(true);
+            Energy.gameObject.SetActive(true);
             content = GameObject.Find("PlayerEnergy").GetComponent<Image>();
         }
         else if (playerClass == "Ranger")
         {
-            GameObject.Find("PlayerFocus").SetActive(true);
+            Focus.gameObject.SetActive(true);
             content = GameObject.Find("PlayerFocus").GetComponent<Image>();
         }
         /*
