@@ -10,7 +10,7 @@ public class Player_Power : NetworkBehaviour
 
     private float maxValue = 100;
 
-    private string playerClass;
+    public string playerClass;
 
     [SyncVar(hook = "UpdateValue")] public float currentValue;
 

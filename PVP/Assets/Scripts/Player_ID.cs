@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class Player_ID : NetworkBehaviour {
@@ -9,10 +10,14 @@ public class Player_ID : NetworkBehaviour {
     private NetworkInstanceId playerNetID;
     private Transform myTransform;
 
+    public Text playerName;
+
     public override void OnStartLocalPlayer()
     {
         GetNetIdentity();
         SetIdentity();
+        playerName = GameObject.Find("PlayerName").GetComponent<Text>();
+        playerName.text = playerUniqueName;
     }
 
     void Awake()

@@ -15,11 +15,13 @@ public class Player_Target : NetworkBehaviour {
 
     public GameObject targetFrame;
 
+    public Text targetName;
+
     public override void OnStartLocalPlayer()
     {
         playerName = player.GetComponent<Player_ID>().playerUniqueName;
         targetFrame = GameObject.Find("TargetFrame");
-        targetFrame.gameObject.SetActive(false);
+        targetFrame.SetActive(false);
     }
 
     void Update () {
@@ -27,10 +29,12 @@ public class Player_Target : NetworkBehaviour {
         {
             if(target != null)
             {
-                targetFrame.gameObject.SetActive(true);
+                //targetFrame.SetActive(true);
+                targetName = GameObject.Find("TargetName").GetComponent<Text>();
+                targetName.text = target.GetComponent<Player_ID>().playerUniqueName;
             } else
             {
-                targetFrame.gameObject.SetActive(false);
+                //targetFrame.SetActive(false);
             }
 
             if (Input.GetMouseButtonDown(0))
