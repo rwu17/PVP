@@ -15,7 +15,11 @@ public class Player_Target : NetworkBehaviour {
 
     private string playerSelf;
 
-    private float targetHPFill = 0.5f;
+    private float targetHPFill;
+
+    public float targetMaxHP;
+
+    public float targetCurrentHP;
 
     public Image targetHP;
 
@@ -24,7 +28,6 @@ public class Player_Target : NetworkBehaviour {
         playerSelf = GetComponent<Player_ID>().playerUniqueName;
         targetFrame = GameObject.Find("TargetFrame");
         targetHP = GameObject.Find("TargetHP").GetComponent<Image>();
-        targetHP.fillAmount = targetHPFill;
         targetFrame.gameObject.SetActive(false);
     }
 
@@ -33,7 +36,7 @@ public class Player_Target : NetworkBehaviour {
         {
             if(target != null)
             {
-
+                targetHealthUpdate();
             }
 
             if (Input.GetMouseButtonDown(0))
@@ -89,7 +92,7 @@ public class Player_Target : NetworkBehaviour {
                 target = hit.transform.gameObject;
                 targetFrame.gameObject.SetActive(true);
                 targetHP.gameObject.SetActive(true);
-                //targetHP.fillAmount = target.GetComponent<Player_Health>().currentFill;
+                targetHealthUpdate();
             }
             else
             {
@@ -97,6 +100,23 @@ public class Player_Target : NetworkBehaviour {
                 targetFrame.gameObject.SetActive(false);
             }
         }
+    }
+
+    void targetHealthUpdate()
+    {
+        targetCurrentHP = target.GetComponent<Player_Health>().currentValue;
+        targetMaxHP = target.GetComponent<Player_Health>().maxValue;
+        targetHPFill = targetCurrentHP / targetMaxHP;
+        targetHP.fillAmount = targetHPFill;
+        /*
+        if (isLocalPlayer)
+        {
+            targetCurrentHP = target.GetComponent<Player_Health>().currentValue;
+            targetMaxHP = target.GetComponent<Player_Health>().maxValue;
+            targetHPFill = targetCurrentHP / targetMaxHP;
+            targetHP.fillAmount = targetHPFill;
+        }
+        */
     }
 
     [Command]

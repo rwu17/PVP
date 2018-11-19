@@ -5,11 +5,11 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class Player_Health : NetworkBehaviour {
-    public float currentFill;
+    private float currentFill;
 
-    [SyncVar(hook = "UpdateValue")]private float currentValue = 100;
+    [SyncVar(hook = "UpdateValue")]public float currentValue;
 
-    private float maxValue = 100;
+    public float maxValue = 100;
 
     private Image content;
 
