@@ -2723,7 +2723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8b0356f42bd34ead061d1904dedef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerUniqueName: Training Dummy
+  playerPublicName: 
 --- !u!114 &1212660675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2735,6 +2735,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9f84bffb7f3942a3c641199427858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxValue: 0
+  currentValue: 100
+  content: {fileID: 0}
   currentFill: 0
 --- !u!1 &1244776324
 GameObject:

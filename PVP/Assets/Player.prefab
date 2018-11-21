@@ -2703,6 +2703,7 @@ GameObject:
   - component: {fileID: 114661597185421564}
   - component: {fileID: 114463267824844674}
   - component: {fileID: 54201212890707484}
+  - component: {fileID: 114449051528259956}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -5938,6 +5939,26 @@ MonoBehaviour:
   collisionLayers:
     serializedVersion: 2
     m_Bits: 567
+--- !u!114 &114449051528259956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913563413317830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1daf0b5adeb315e4daa21c5a37c7904f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxValue: 0
+  currentValue: 1
+  playerClass: 
+  power: {fileID: 0}
+  mana: {fileID: 0}
+  rage: {fileID: 0}
+  energy: {fileID: 0}
+  focus: {fileID: 0}
+  currentFill: 0
 --- !u!114 &114463267824844674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5949,6 +5970,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f4f29dc3297f640ae3531b8d341262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorMain: {fileID: 2800000, guid: 583bd4671912b8c439bb140629b9d682, type: 3}
+  cursorAttack: {fileID: 2800000, guid: d41742ad680ea5245a403fe7a83e2e32, type: 3}
+  cursorEnemy: {fileID: 2800000, guid: 7763cf01f830fdd46887622642266cba, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
+  player: {fileID: 1913563413317830}
+  playerSelf: 
 --- !u!114 &114661597185421564
 MonoBehaviour:
   m_ObjectHideFlags: 1

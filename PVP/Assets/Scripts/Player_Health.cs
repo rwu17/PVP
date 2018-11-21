@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 public class Player_Health : NetworkBehaviour {
 
-    public float maxValue = 100;
+    public float maxValue;
 
     [SyncVar (hook = "UpdateValue")]
     public float currentValue = 100;

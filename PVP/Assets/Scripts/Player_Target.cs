@@ -7,13 +7,22 @@ using UnityEngine.Networking;
 
 public class Player_Target : NetworkBehaviour {
 
+    //Cursor on enemies
+    public Texture2D cursorMain;
+    public Texture2D cursorAttack;
+    public Texture2D cursorEnemy;
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
+
+    public GameObject player;
+
     private GameObject target;
 
     private GameObject targetFrame;
 
     private Text targetName;
 
-    private string playerSelf;
+    public string playerSelf;
 
     private float targetCurrentHP;
 
@@ -32,9 +41,11 @@ public class Player_Target : NetworkBehaviour {
         targetFrame.gameObject.SetActive(false);
     }
 
-    void Update () {
+    void Update() {
         if (isLocalPlayer)
         {
+            changeCursor();
+
             if (Input.GetMouseButtonDown(0))
             {
                 TargetSelect();
@@ -52,7 +63,7 @@ public class Player_Target : NetworkBehaviour {
 
             if (Input.GetKeyDown(KeyCode.I))
             {
-                if(target != null)
+                if (target != null)
                 {
                     CmdServerDamage(target, 10);
                 }
@@ -73,7 +84,7 @@ public class Player_Target : NetworkBehaviour {
                 }
             }
         }
-	}
+    }
 
     void TargetSelect()
     {
@@ -112,10 +123,33 @@ public class Player_Target : NetworkBehaviour {
         targetHP.fillAmount = targetHPFill;
     }
 
+    /*
     [Command]
     void CmdTellServerTargetName(GameObject selectedTarget)
     {
         targetName.text = selectedTarget.GetComponent<Player_ID>().GetPlayerUniqueName();
+    }
+    */
+
+    void changeCursor(){
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if(Physics.Raycast (ray, out hit, 10000))
+        {
+            if (hit.transform.name == playerSelf)
+            {
+                Cursor.SetCursor(cursorMain, hotSpot, cursorMode);
+            }
+            else if (hit.transform.tag == "Player")
+            {
+                Cursor.SetCursor(cursorEnemy, hotSpot, cursorMode);
+            }
+            else
+            {
+                Cursor.SetCursor(cursorMain, hotSpot, cursorMode);
+            }
+        }
     }
 
     [Command]
