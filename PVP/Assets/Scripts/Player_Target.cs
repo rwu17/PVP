@@ -106,28 +106,18 @@ public class Player_Target : NetworkBehaviour {
 
     void TargetHP(GameObject selectedTarget)
     {
-        targetCurrentHP = selectedTarget.GetComponent<Player_Health>().publicValue;
-        targetMaxHP = selectedTarget.GetComponent<Player_Health>().publicMaxValue;
+        targetCurrentHP = selectedTarget.GetComponent<Player_Health>().currentValue;
+        targetMaxHP = selectedTarget.GetComponent<Player_Health>().maxValue;
         targetHPFill = targetCurrentHP / targetMaxHP;
         targetHP.fillAmount = targetHPFill;
     }
-
 
     [Command]
     void CmdTellServerTargetName(GameObject selectedTarget)
     {
         targetName.text = selectedTarget.GetComponent<Player_ID>().GetPlayerUniqueName();
     }
-    /*
-    [Command]
-    void CmdTellServerTargetHP(GameObject selectedTarget)
-    {
-        targetCurrentHP = selectedTarget.GetComponent<Player_Health>().publicValue;
-        targetMaxHP = selectedTarget.GetComponent<Player_Health>().publicMaxValue;
-        targetHPFill = targetCurrentHP / targetMaxHP;
-        targetHP.fillAmount = targetHPFill;
-    }
-    */
+
     [Command]
     void CmdServerDamage(GameObject damageTarget, float damage)
     {

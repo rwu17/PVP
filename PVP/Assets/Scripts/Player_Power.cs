@@ -28,7 +28,7 @@ public class Player_Power : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
-            PowerImage();
+            //PowerImage();
 
             if (playerClass == "Mage")
             {
