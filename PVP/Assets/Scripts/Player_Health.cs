@@ -20,8 +20,14 @@ public class Player_Health : NetworkBehaviour {
         content = GameObject.Find("PlayerHP").GetComponent<Image>();
         SetValue();
     }
-    
-    public void SetValue()
+
+    private void Start()
+    {
+        currentValue = 100;
+        maxValue = 100;
+    }
+
+    void SetValue()
     {
         if (isLocalPlayer)
         {
