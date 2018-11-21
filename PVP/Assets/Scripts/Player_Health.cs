@@ -7,18 +7,36 @@ using UnityEngine.Networking;
 public class Player_Health : NetworkBehaviour {
 
     [SyncVar (hook = "UpdateValue")]
-    public float currentValue = 100;
+    private float currentValue = 100;
 
-    public float maxValue = 100;
+    private float maxValue = 100;
 
     private Image content;
 
     private float currentFill;
 
+    public float publicValue;
+
+    public float publicMaxValue;
+
     public override void OnStartLocalPlayer()
     {
         content = GameObject.Find("PlayerHP").GetComponent<Image>();
         SetValue();
+    }
+
+    private void Update()
+    {
+        if (!isServer)
+        {
+            CmdPlayerValue(currentValue);
+            CmdPlayerMaxValue(maxValue);
+        }
+        else if(isServer)
+        {
+            RpcPlayerValue(currentValue);
+            RpcPlayerMaxValue(currentValue);
+        }
     }
 
     public void SetValue()
@@ -49,5 +67,29 @@ public class Player_Health : NetworkBehaviour {
     {
         currentValue = value;
         SetValue();
+    }
+
+    [Command]
+    void CmdPlayerValue(float value)
+    {
+        RpcPlayerValue(value);
+    }
+
+    [ClientRpc]
+    void RpcPlayerValue(float value)
+    {
+        publicValue = value;
+    }
+
+    [Command]
+    void CmdPlayerMaxValue(float value)
+    {
+        RpcPlayerMaxValue(value);
+    }
+
+    [ClientRpc]
+    void RpcPlayerMaxValue(float value)
+    {
+        publicMaxValue = value;
     }
 }

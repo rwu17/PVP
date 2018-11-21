@@ -47,7 +47,7 @@ public class Player_Target : NetworkBehaviour {
 
             if (target != null)
             {
-                CmdTellServerTargetHP(target);
+                TargetHP(target);
             }
 
             if (Input.GetKeyDown(KeyCode.I))
@@ -94,7 +94,7 @@ public class Player_Target : NetworkBehaviour {
                 targetFrame.gameObject.SetActive(true);
                 targetHP.gameObject.SetActive(true);
                 //CmdTellServerTargetName(target);
-                CmdTellServerTargetHP(target);
+                TargetHP(target);
             }
             else
             {
@@ -104,21 +104,30 @@ public class Player_Target : NetworkBehaviour {
         }
     }
 
+    void TargetHP(GameObject selectedTarget)
+    {
+        targetCurrentHP = selectedTarget.GetComponent<Player_Health>().publicValue;
+        targetMaxHP = selectedTarget.GetComponent<Player_Health>().publicMaxValue;
+        targetHPFill = targetCurrentHP / targetMaxHP;
+        targetHP.fillAmount = targetHPFill;
+    }
+
+
     [Command]
     void CmdTellServerTargetName(GameObject selectedTarget)
     {
         targetName.text = selectedTarget.GetComponent<Player_ID>().GetPlayerUniqueName();
     }
-
+    /*
     [Command]
     void CmdTellServerTargetHP(GameObject selectedTarget)
     {
-        targetCurrentHP = selectedTarget.GetComponent<Player_Health>().currentValue;
-        targetMaxHP = selectedTarget.GetComponent<Player_Health>().maxValue;
+        targetCurrentHP = selectedTarget.GetComponent<Player_Health>().publicValue;
+        targetMaxHP = selectedTarget.GetComponent<Player_Health>().publicMaxValue;
         targetHPFill = targetCurrentHP / targetMaxHP;
         targetHP.fillAmount = targetHPFill;
     }
-
+    */
     [Command]
     void CmdServerDamage(GameObject damageTarget, float damage)
     {
