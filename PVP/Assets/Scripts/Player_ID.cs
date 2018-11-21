@@ -6,18 +6,25 @@ using UnityEngine.Networking;
 
 public class Player_ID : NetworkBehaviour {
 
-    [SyncVar] public string playerUniqueName;
+    [SyncVar] private string playerUniqueName;
     private NetworkInstanceId playerNetID;
     private Transform myTransform;
 
-    public string playerFrameName;
+    private Text playerFrameName;
+
+    public string playerPublicName;
 
     public override void OnStartLocalPlayer()
     {
         GetNetIdentity();
         SetIdentity();
-        playerFrameName = GameObject.Find("PlayerName").GetComponent<Text>().text.ToString();
-        //GameObject.Find("PlayerName").GetComponent<Text>().text = playerUniqueName;
+        playerPublicName = playerUniqueName;
+        playerFrameName = GameObject.Find("PlayerName").GetComponent<Text>();
+    }
+
+    public string GetPlayerUniqueName()
+    {
+        return playerUniqueName;
     }
 
     void Awake()

@@ -5,21 +5,23 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class Player_Health : NetworkBehaviour {
-    private float currentFill;
 
-    [SyncVar(hook = "UpdateValue")]public float currentValue;
+    [SyncVar (hook = "UpdateValue")]
+    public float currentValue = 100;
 
     public float maxValue = 100;
 
     private Image content;
 
+    private float currentFill;
+
     public override void OnStartLocalPlayer()
     {
         content = GameObject.Find("PlayerHP").GetComponent<Image>();
-        UpdateValue(maxValue);
+        SetValue();
     }
 
-    void SetValue()
+    public void SetValue()
     {
         if (isLocalPlayer)
         {
@@ -39,11 +41,11 @@ public class Player_Health : NetworkBehaviour {
         else if (currentValue <= 0)
         {
             currentValue = 0;
-            Debug.Log("Dead!");
+            Debug.Log("The target is dead!");
         }
     }
 
-    void UpdateValue(float value)
+    public void UpdateValue(float value)
     {
         currentValue = value;
         SetValue();

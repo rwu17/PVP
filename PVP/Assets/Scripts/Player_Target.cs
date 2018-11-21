@@ -7,38 +7,34 @@ using UnityEngine.Networking;
 
 public class Player_Target : NetworkBehaviour {
 
-    public GameObject target;
+    private GameObject target;
 
     private GameObject targetFrame;
 
-    public Text targetName;
+    private Text targetName;
 
     private string playerSelf;
 
+    private float targetCurrentHP;
+
+    private float targetMaxHP;
+
     private float targetHPFill;
 
-    public float targetMaxHP;
-
-    public float targetCurrentHP;
-
-    public Image targetHP;
+    private Image targetHP;
 
     public override void OnStartLocalPlayer()
     {
-        playerSelf = GetComponent<Player_ID>().playerUniqueName;
+        playerSelf = GetComponent<Player_ID>().playerPublicName;
         targetFrame = GameObject.Find("TargetFrame");
         targetHP = GameObject.Find("TargetHP").GetComponent<Image>();
+        targetName = GameObject.Find("TargetName").GetComponent<Text>();
         targetFrame.gameObject.SetActive(false);
     }
 
     void Update () {
         if (isLocalPlayer)
         {
-            if(target != null)
-            {
-                targetHealthUpdate();
-            }
-
             if (Input.GetMouseButtonDown(0))
             {
                 TargetSelect();
@@ -47,6 +43,11 @@ public class Player_Target : NetworkBehaviour {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 target = null;
+            }
+
+            if (target != null)
+            {
+                CmdTellServerTargetHP(target);
             }
 
             if (Input.GetKeyDown(KeyCode.I))
@@ -92,7 +93,8 @@ public class Player_Target : NetworkBehaviour {
                 target = hit.transform.gameObject;
                 targetFrame.gameObject.SetActive(true);
                 targetHP.gameObject.SetActive(true);
-                targetHealthUpdate();
+                //CmdTellServerTargetName(target);
+                CmdTellServerTargetHP(target);
             }
             else
             {
@@ -102,25 +104,23 @@ public class Player_Target : NetworkBehaviour {
         }
     }
 
-    void targetHealthUpdate()
+    [Command]
+    void CmdTellServerTargetName(GameObject selectedTarget)
     {
-        targetCurrentHP = target.GetComponent<Player_Health>().currentValue;
-        targetMaxHP = target.GetComponent<Player_Health>().maxValue;
-        targetHPFill = targetCurrentHP / targetMaxHP;
-        targetHP.fillAmount = targetHPFill;
-        /*
-        if (isLocalPlayer)
-        {
-            targetCurrentHP = target.GetComponent<Player_Health>().currentValue;
-            targetMaxHP = target.GetComponent<Player_Health>().maxValue;
-            targetHPFill = targetCurrentHP / targetMaxHP;
-            targetHP.fillAmount = targetHPFill;
-        }
-        */
+        targetName.text = selectedTarget.GetComponent<Player_ID>().GetPlayerUniqueName();
     }
 
     [Command]
-    private void CmdServerDamage(GameObject damageTarget, float damage)
+    void CmdTellServerTargetHP(GameObject selectedTarget)
+    {
+        targetCurrentHP = selectedTarget.GetComponent<Player_Health>().currentValue;
+        targetMaxHP = selectedTarget.GetComponent<Player_Health>().maxValue;
+        targetHPFill = targetCurrentHP / targetMaxHP;
+        targetHP.fillAmount = targetHPFill;
+    }
+
+    [Command]
+    void CmdServerDamage(GameObject damageTarget, float damage)
     {
         //GameObject selectedTarget = GameObject.Find(target);
         //selectedTarget.GetComponent<Player_Health>().OnChangeValue(damage);
