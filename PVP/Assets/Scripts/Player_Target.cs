@@ -34,7 +34,7 @@ public class Player_Target : NetworkBehaviour {
 
     public override void OnStartLocalPlayer()
     {
-        playerSelf = GetComponent<Player_ID>().playerPublicName;
+        //playerSelf = GetComponent<Player_ID>().playerPublicName;
         targetFrame = GameObject.Find("TargetFrame");
         targetHP = GameObject.Find("TargetHP").GetComponent<Image>();
         targetName = GameObject.Find("TargetName").GetComponent<Text>();

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class Player_ID : NetworkBehaviour {
-
+    /*
     [SyncVar] private string playerUniqueName;
     private NetworkInstanceId playerNetID;
     private Transform myTransform;
@@ -70,4 +70,5 @@ public class Player_ID : NetworkBehaviour {
     {
         playerUniqueName = name;
     }
+    */
 }
