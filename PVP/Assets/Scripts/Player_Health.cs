@@ -9,7 +9,7 @@ public class Player_Health : NetworkBehaviour {
     public float maxValue;
 
     [SyncVar (hook = "UpdateValue")]
-    public float currentValue = 100;
+    public float currentValue = 25; //Don't know what this value does
 
     public Image content;
 
@@ -18,19 +18,21 @@ public class Player_Health : NetworkBehaviour {
     public override void OnStartLocalPlayer()
     {
         content = GameObject.Find("PlayerHP").GetComponent<Image>();
-        SetValue();
+        //SetValue();
     }
 
     private void Start()
     {
-        currentValue = 100;
-        maxValue = 100;
+        currentValue = 100; //initiate value
+        maxValue = 50; //initiate value
+        SetValue();
     }
 
     void SetValue()
     {
         if (isLocalPlayer)
         {
+            valueValidate();
             currentFill = currentValue / maxValue;
             content.fillAmount = currentFill;
         }
@@ -39,7 +41,18 @@ public class Player_Health : NetworkBehaviour {
     public void OnChangeValue(float amount)
     {
         currentValue -= amount;
+        valueValidate();
+    }
 
+    void UpdateValue(float value)
+    {
+        currentValue = value;
+        valueValidate();
+        SetValue();
+    }
+
+    void valueValidate()
+    {
         if (currentValue > maxValue)
         {
             currentValue = maxValue;
@@ -49,11 +62,5 @@ public class Player_Health : NetworkBehaviour {
             currentValue = 0;
             Debug.Log("The target is dead!");
         }
-    }
-
-    void UpdateValue(float value)
-    {
-        currentValue = value;
-        SetValue();
     }
 }

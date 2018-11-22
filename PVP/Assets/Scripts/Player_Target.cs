@@ -38,7 +38,7 @@ public class Player_Target : NetworkBehaviour {
         targetFrame = GameObject.Find("TargetFrame");
         targetHP = GameObject.Find("TargetHP").GetComponent<Image>();
         targetName = GameObject.Find("TargetName").GetComponent<Text>();
-        targetFrame.gameObject.SetActive(false);
+        //targetFrame.gameObject.SetActive(false);
     }
 
     void Update() {
@@ -122,14 +122,6 @@ public class Player_Target : NetworkBehaviour {
         targetHPFill = targetCurrentHP / targetMaxHP;
         targetHP.fillAmount = targetHPFill;
     }
-
-    /*
-    [Command]
-    void CmdTellServerTargetName(GameObject selectedTarget)
-    {
-        targetName.text = selectedTarget.GetComponent<Player_ID>().GetPlayerUniqueName();
-    }
-    */
 
     void changeCursor(){
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

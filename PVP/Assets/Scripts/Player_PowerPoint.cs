@@ -9,11 +9,11 @@ public class Player_PowerPoint : NetworkBehaviour {
     public float maxValue;
 
     [SyncVar(hook = "UpdateValue")]
-    public float currentValue = 50;
+    public float currentValue = 100;
 
     public string playerClass;
 
-    public Image power;
+    public Image content;
 
     public Image mana;
 
@@ -27,92 +27,91 @@ public class Player_PowerPoint : NetworkBehaviour {
 
     public override void OnStartLocalPlayer()
     {
-        assignPower();
-
-        playerClass = "stalker";
-
-        switch (playerClass)
+        if (isLocalPlayer)
         {
-            case "mage":
-                mana.gameObject.SetActive(true);
-                power = mana;
-                SetValue();
-                break;
-            case "warrior":
-                rage.gameObject.SetActive(true);
-                power = rage;
-                SetValue();
-                break;
-            case "stalker":
-                energy.gameObject.SetActive(true);
-                power = energy;
-                SetValue();
-                break;
-            case "ranger":
-                focus.gameObject.SetActive(true);
-                power = focus;
-                SetValue();
-                break;
-            default:
-                mana.gameObject.SetActive(true);
-                power = mana;
-                SetValue();
-                break;
+            playerClass = "stalker";
+
+            mana = GameObject.Find("PlayerMana").GetComponent<Image>();
+            rage = GameObject.Find("PlayerRage").GetComponent<Image>();
+            energy = GameObject.Find("PlayerEnergy").GetComponent<Image>();
+            focus = GameObject.Find("PlayerFocus").GetComponent<Image>();
+
+            mana.gameObject.SetActive(false);
+            rage.gameObject.SetActive(false);
+            energy.gameObject.SetActive(false);
+            focus.gameObject.SetActive(false);
+
+
+            switch (playerClass)
+            {
+                case "mage":
+                    mana.gameObject.SetActive(true);
+                    content = mana;
+                    //content = GameObject.Find("PlayerMana").GetComponent<Image>();
+                    break;
+                case "warrior":
+                    rage.gameObject.SetActive(true);
+                    content = rage;
+                    //content = GameObject.Find("PlayerRage").GetComponent<Image>();
+                    break;
+                case "stalker":
+                    energy.gameObject.SetActive(true);
+                    content = energy;
+                    //content = GameObject.Find("PlayerEnergy").GetComponent<Image>();
+                    break;
+                case "ranger":
+                    focus.gameObject.SetActive(true);
+                    content = focus;
+                    //content = GameObject.Find("PlayerFocus").GetComponent<Image>();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
     // Use this for initialization
     void Start () {
-        playerClass = "stalker";
-
-        switch (playerClass)
+        //playerClass = "stalker";
+        if (isLocalPlayer)
         {
-            case "mage":
-                currentValue = 200;
-                maxValue = 200;
-                break;
-            case "warrior":
-                currentValue = 0;
-                maxValue = 100;
-                break;
-            case "stalker":
-                currentValue = 100;
-                maxValue = 100;
-                break;
-            case "ranger":
-                currentValue = 100;
-                maxValue = 100;
-                break;
-            default:
-                currentValue = 0;
-                maxValue = 0;
-                break;
+            switch (playerClass)
+            {
+                case "mage":
+                    currentValue = 200;
+                    maxValue = 200;
+                    SetValue();
+                    break;
+                case "warrior":
+                    currentValue = 0;
+                    maxValue = 100;
+                    SetValue();
+                    break;
+                case "stalker":
+                    currentValue = 100;
+                    maxValue = 100;
+                    SetValue();
+                    break;
+                case "ranger":
+                    currentValue = 100;
+                    maxValue = 100;
+                    SetValue();
+                    break;
+                default:
+                    currentValue = 0;
+                    maxValue = 0;
+                    SetValue();
+                    break;
+            }
         }
 	}
-
-    private void Update()
-    {
-        
-    }
-
-    void assignPower()
-    {
-        mana = GameObject.Find("PlayerMana").GetComponent<Image>();
-        mana.gameObject.SetActive(false);
-        rage = GameObject.Find("PlayerRage").GetComponent<Image>();
-        rage.gameObject.SetActive(false);
-        energy = GameObject.Find("PlayerEnergy").GetComponent<Image>();
-        energy.gameObject.SetActive(false);
-        focus = GameObject.Find("PlayerFocus").GetComponent<Image>();
-        focus.gameObject.SetActive(false);
-    }
 
     void SetValue()
     {
         if (isLocalPlayer)
         {
             currentFill = currentValue / maxValue;
-            power.fillAmount = currentFill;
+            content.fillAmount = currentFill;
         }
     }
 
