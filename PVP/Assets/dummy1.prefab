@@ -53,8 +53,9 @@ GameObject:
   - component: {fileID: 65302028157485070}
   - component: {fileID: 54444427391247918}
   - component: {fileID: 114113058996471134}
-  - component: {fileID: 114035142187984690}
-  - component: {fileID: 114220911949831816}
+  - component: {fileID: 114026538834849452}
+  - component: {fileID: 114324492816261070}
+  - component: {fileID: 114740001687006884}
   m_Layer: 0
   m_Name: dummy1
   m_TagString: Player
@@ -207,7 +208,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114035142187984690
+--- !u!114 &114026538834849452
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,11 +216,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1691545867787876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faf9f84bffb7f3942a3c641199427858, type: 3}
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxValue: 100
-  currentValue: 0
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114113058996471134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -251,8 +260,38 @@ MonoBehaviour:
     i14: 52
     i15: 43
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114220911949831816
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114324492816261070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691545867787876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3871cde6570c784cb6331a1a2aa3d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 0}
+  Player: {fileID: 0}
+  Target: {fileID: 0}
+  playerPublicName: 
+  PlayerFrame: {fileID: 0}
+  PlayerHealth: {fileID: 0}
+  maxHealth: 100
+  currentHealth: 100
+  healthFill: 1
+  TargetFrame: {fileID: 0}
+  TargetHealth: {fileID: 0}
+  TargetMaxHealth: 0
+  TargetCurrentHealth: 0
+  TargetHealthFill: 0
+  cursorMain: {fileID: 0}
+  cursorAttack: {fileID: 0}
+  cursorEnemy: {fileID: 0}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
+--- !u!114 &114740001687006884
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,8 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8b0356f42bd34ead061d1904dedef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerUniqueName: 
-  playerName: {fileID: 0}
+  playerPublicName: Dummy
 --- !u!137 &137728912241403606
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

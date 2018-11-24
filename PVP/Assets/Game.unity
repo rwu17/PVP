@@ -442,67 +442,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114113058996471134, guid: 0c5d540240673774181fd27c012b342b,
-        type: 2}
-      propertyPath: m_ServerOnly
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114113058996471134, guid: 0c5d540240673774181fd27c012b342b,
-        type: 2}
-      propertyPath: m_LocalPlayerAuthority
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114220911949831816, guid: 0c5d540240673774181fd27c012b342b, type: 2}
-    - {fileID: 114035142187984690, guid: 0c5d540240673774181fd27c012b342b, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c5d540240673774181fd27c012b342b, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1212660673 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1691545867787876, guid: 0c5d540240673774181fd27c012b342b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1212660672}
---- !u!114 &1212660674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1212660673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f8b0356f42bd34ead061d1904dedef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1212660675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1212660673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3871cde6570c784cb6331a1a2aa3d51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  Target: {fileID: 0}
-  playerPublicName: 
-  Canvas: {fileID: 0}
-  PlayerFrame: {fileID: 0}
-  PlayerHealth: {fileID: 0}
-  maxHealth: 100
-  currentHealth: 100
-  healthFill: 1
-  TargetFrame: {fileID: 0}
-  TargetHealth: {fileID: 0}
-  TargetMaxHealth: 0
-  TargetCurrentHealth: 0
-  TargetHealthFill: 0
-  cursorMain: {fileID: 0}
-  cursorAttack: {fileID: 0}
-  cursorEnemy: {fileID: 0}
-  cursorMode: 0
-  hotSpot: {x: 0, y: 0}
 --- !u!1 &1329595320
 GameObject:
   m_ObjectHideFlags: 0

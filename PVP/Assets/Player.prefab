@@ -7223,10 +7223,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3871cde6570c784cb6331a1a2aa3d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Canvas: {fileID: 1318213389582858}
   Player: {fileID: 1913563413317830}
   Target: {fileID: 0}
   playerPublicName: 
-  Canvas: {fileID: 1318213389582858}
   PlayerFrame: {fileID: 1031526161992820}
   PlayerHealth: {fileID: 114795815011667910}
   maxHealth: 0
@@ -10602,7 +10602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 90}
+  m_AnchoredPosition: {x: 0, y: 87}
   m_SizeDelta: {x: 1440, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224579298607275988

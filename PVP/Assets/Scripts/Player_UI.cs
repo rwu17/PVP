@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Player_UI : NetworkBehaviour {
 
+    public GameObject Canvas;
+
     public GameObject Player;
     public GameObject Target;
 
@@ -13,15 +15,12 @@ public class Player_UI : NetworkBehaviour {
     private NetworkInstanceId playerNetID;
     private Transform myTransform;
 
-    public string playerPublicName;
-
-    public GameObject Canvas;
+    public string playerPublicName; 
 
     public GameObject PlayerFrame;    
     public Image PlayerHealth;    
-    public float maxHealth;
-    [SyncVar(hook = "UpdateHealth")]
-    public float currentHealth = 25;
+    [SyncVar]public float maxHealth;
+    [SyncVar]public float currentHealth;
     public float healthFill;
 
     public GameObject TargetFrame;
@@ -47,12 +46,8 @@ public class Player_UI : NetworkBehaviour {
 
     private void Start()
     {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
-        currentHealth = 100; //Initiate value
         maxHealth = 50;//Initiate value
+        currentHealth = maxHealth; //Initiate value
         SetHealth();
     }
 
@@ -66,14 +61,37 @@ public class Player_UI : NetworkBehaviour {
             changeCursor();
 
             if (Input.GetMouseButtonDown(0))
+            {
                 TargetSelect();
+                
+                if (Target != null)
+                {
+                    TargetHealthUpdate(Target);
+                    //CmdSendTargetHealth(Target);
+                }
+                
+            }
 
             if (Input.GetKeyDown(KeyCode.Escape))
+            {
                 Target = null;
-
+                TargetFrame.gameObject.SetActive(false);
+            }
+                
             if (Target != null)
+            {
+                TargetFrame.gameObject.SetActive(true);
                 TargetHealthUpdate(Target);
-
+                //CmdSendTargetHealth(Target);                
+            }
+            else
+            {
+                TargetFrame.gameObject.SetActive(false);
+                TargetCurrentHealth = 0;
+                TargetMaxHealth = 0;
+                TargetHealthFill = 0;
+            }
+                
             if (Input.GetKeyDown(KeyCode.I))
             {
                 if (Target != null)
@@ -99,18 +117,6 @@ public class Player_UI : NetworkBehaviour {
         }
     }
 
-    void HealthValidate()
-    {
-        if(currentHealth > maxHealth)
-        {
-            currentHealth = maxHealth;
-        } else if(currentHealth <= 0)
-        {
-            currentHealth = 0;
-            Debug.Log("The target is dead!");
-        }
-    }
-
     void SetHealth()
     {
         if (isLocalPlayer)
@@ -123,15 +129,35 @@ public class Player_UI : NetworkBehaviour {
 
     public void HealthDamage(float amount)
     {
+        if (!isServer)
+        {
+            return;
+        }
+
         currentHealth -= amount;
         HealthValidate();
+        SetHealth();
     }
-
+    /*
     void UpdateHealth(float health)
     {
         currentHealth = health;
         HealthValidate();
         SetHealth();
+    }
+    */
+
+    void HealthValidate()
+    {
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Debug.Log("The target is dead!");
+        }
     }
 
     public string GetPlayerUniqueName()
@@ -192,8 +218,9 @@ public class Player_UI : NetworkBehaviour {
             {
                 Target = hit.transform.gameObject;
                 TargetFrame.gameObject.SetActive(true);
-                //CmdTellServerTargetName(target);
                 TargetHealthUpdate(Target);
+                //CmdSendTargetHealth(Target);
+                //CmdTellServerTargetName(target);
             }
             else
             {
@@ -227,6 +254,7 @@ public class Player_UI : NetworkBehaviour {
 
     void TargetHealthUpdate(GameObject selectedTarget)
     {
+        TargetHealthFill = 0;
         TargetCurrentHealth = selectedTarget.GetComponent<Player_UI>().currentHealth;
         TargetMaxHealth = selectedTarget.GetComponent<Player_UI>().maxHealth;
         TargetHealthFill = TargetCurrentHealth / TargetMaxHealth;
