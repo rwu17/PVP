@@ -19,8 +19,8 @@ public class Player_UI : NetworkBehaviour {
 
     public GameObject PlayerFrame;    
     public Image PlayerHealth;    
-    [SyncVar]public float maxHealth;
-    [SyncVar]public float currentHealth;
+    [SyncVar(hook = "UpdateMaxHealth")]public float maxHealth;
+    [SyncVar(hook = "UpdateHealth")]public float currentHealth;
     public float healthFill;
 
     public GameObject TargetFrame;
@@ -33,7 +33,7 @@ public class Player_UI : NetworkBehaviour {
     public Texture2D cursorAttack;
     public Texture2D cursorEnemy;
     public CursorMode cursorMode = CursorMode.Auto;
-    public Vector2 hotSpot = Vector2.zero;    
+    public Vector2 hotSpot = Vector2.zero;
 
     public override void OnStartLocalPlayer()
     {
@@ -121,7 +121,6 @@ public class Player_UI : NetworkBehaviour {
     {
         if (isLocalPlayer)
         {
-            HealthValidate();
             healthFill = currentHealth / maxHealth;
             PlayerHealth.fillAmount = healthFill;
         }
@@ -138,14 +137,21 @@ public class Player_UI : NetworkBehaviour {
         HealthValidate();
         SetHealth();
     }
-    /*
+
     void UpdateHealth(float health)
     {
         currentHealth = health;
-        HealthValidate();
         SetHealth();
     }
-    */
+
+    void UpdateMaxHealth(float health)
+    {
+        maxHealth = health;
+        /*
+        HealthValidate();
+        SetHealth();
+        */
+    }
 
     void HealthValidate()
     {
