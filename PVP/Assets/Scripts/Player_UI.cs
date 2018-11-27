@@ -19,11 +19,12 @@ public class Player_UI : NetworkBehaviour {
 
     public GameObject PlayerFrame;    
     public Image PlayerHealth;    
-    [SyncVar]
-    public float maxHealth = 50;
 
-    [SyncVar]
-    public float currentHealth = 50;
+    [SyncVar (hook = "OnChangeMaxHealth")]
+    public float maxHealth;
+
+    [SyncVar (hook = "OnChangeHealth")]
+    public float currentHealth;
     public float healthFill;
 
     public GameObject TargetFrame;
@@ -40,18 +41,15 @@ public class Player_UI : NetworkBehaviour {
 
     public override void OnStartLocalPlayer()
     {
+        maxHealth = 50;
+        currentHealth = maxHealth;
+        SetHealth();
+
         GetNetIdentity();
         SetIdentity();
         playerPublicName = playerUniqueName;
         Canvas.gameObject.SetActive(true);
         TargetFrame.gameObject.SetActive(false);
-    }
-
-    private void Start()
-    {
-        //maxHealth = 50;//Initiate value
-        //currentHealth = maxHealth; //Initiate value
-        SetHealth();
     }
 
     private void Update()
@@ -117,6 +115,20 @@ public class Player_UI : NetworkBehaviour {
                 }
             }
         }
+    }
+
+    void OnChangeMaxHealth(float health)
+    {
+        maxHealth = health;
+        HealthValidate();
+        SetHealth();
+    }
+
+    void OnChangeHealth(float health)
+    {
+        currentHealth = health;
+        HealthValidate();
+        SetHealth();
     }
 
     void SetHealth()
@@ -259,6 +271,6 @@ public class Player_UI : NetworkBehaviour {
         //GameObject selectedTarget = GameObject.Find(target);
         //selectedTarget.GetComponent<Player_Health>().OnChangeValue(damage);
         damageTarget.GetComponent<Player_UI>().HealthDamage(damage);
+        //RpcServerDamage(damageTarget, damage);
     }
-
 }
