@@ -19,8 +19,11 @@ public class Player_UI : NetworkBehaviour {
 
     public GameObject PlayerFrame;    
     public Image PlayerHealth;    
-    [SyncVar(hook = "UpdateMaxHealth")]public float maxHealth;
-    [SyncVar(hook = "UpdateHealth")]public float currentHealth;
+    [SyncVar]
+    public float maxHealth = 50;
+
+    [SyncVar]
+    public float currentHealth = 50;
     public float healthFill;
 
     public GameObject TargetFrame;
@@ -46,8 +49,8 @@ public class Player_UI : NetworkBehaviour {
 
     private void Start()
     {
-        maxHealth = 50;//Initiate value
-        currentHealth = maxHealth; //Initiate value
+        //maxHealth = 50;//Initiate value
+        //currentHealth = maxHealth; //Initiate value
         SetHealth();
     }
 
@@ -66,8 +69,8 @@ public class Player_UI : NetworkBehaviour {
                 
                 if (Target != null)
                 {
-                    //TargetHealthUpdate(Target);
-                    CmdTargetSelect(Target);
+                    TargetHealthUpdate(Target);
+                    //CmdTargetSelect(Target);
                 }
             }
 
@@ -80,8 +83,8 @@ public class Player_UI : NetworkBehaviour {
             if (Target != null)
             {
                 TargetFrame.gameObject.SetActive(true);
-                //TargetHealthUpdate(Target);
-                CmdTargetSelect(Target);
+                TargetHealthUpdate(Target);
+                //CmdTargetSelect(Target);
             }
             else
             {
@@ -135,21 +138,6 @@ public class Player_UI : NetworkBehaviour {
         currentHealth -= amount;
         HealthValidate();
         SetHealth();
-    }
-
-    void UpdateHealth(float health)
-    {
-        currentHealth = health;
-        SetHealth();
-    }
-
-    void UpdateMaxHealth(float health)
-    {
-        maxHealth = health;
-        /*
-        HealthValidate();
-        SetHealth();
-        */
     }
 
     void HealthValidate()
@@ -263,13 +251,6 @@ public class Player_UI : NetworkBehaviour {
         TargetMaxHealth = selectedTarget.GetComponent<Player_UI>().maxHealth;
         TargetHealthFill = TargetCurrentHealth / TargetMaxHealth;
         TargetHealth.fillAmount = TargetHealthFill;
-    }
-
-    [Command]
-    void CmdTargetSelect(GameObject selectTarget)
-    {
-        selectTarget.GetComponent<Player_UI>().TargetHealthUpdate(selectTarget);
-        //TargetHealthUpdate(selectTarget);
     }
 
     [Command]
