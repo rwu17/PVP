@@ -66,10 +66,9 @@ public class Player_UI : NetworkBehaviour {
                 
                 if (Target != null)
                 {
-                    TargetHealthUpdate(Target);
-                    //CmdSendTargetHealth(Target);
+                    //TargetHealthUpdate(Target);
+                    CmdTargetSelect(Target);
                 }
-                
             }
 
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -81,8 +80,8 @@ public class Player_UI : NetworkBehaviour {
             if (Target != null)
             {
                 TargetFrame.gameObject.SetActive(true);
-                TargetHealthUpdate(Target);
-                //CmdSendTargetHealth(Target);                
+                //TargetHealthUpdate(Target);
+                CmdTargetSelect(Target);
             }
             else
             {
@@ -225,7 +224,6 @@ public class Player_UI : NetworkBehaviour {
                 Target = hit.transform.gameObject;
                 TargetFrame.gameObject.SetActive(true);
                 TargetHealthUpdate(Target);
-                //CmdSendTargetHealth(Target);
                 //CmdTellServerTargetName(target);
             }
             else
@@ -265,6 +263,13 @@ public class Player_UI : NetworkBehaviour {
         TargetMaxHealth = selectedTarget.GetComponent<Player_UI>().maxHealth;
         TargetHealthFill = TargetCurrentHealth / TargetMaxHealth;
         TargetHealth.fillAmount = TargetHealthFill;
+    }
+
+    [Command]
+    void CmdTargetSelect(GameObject selectTarget)
+    {
+        selectTarget.GetComponent<Player_UI>().TargetHealthUpdate(selectTarget);
+        //TargetHealthUpdate(selectTarget);
     }
 
     [Command]
